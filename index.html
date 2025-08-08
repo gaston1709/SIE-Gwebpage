@@ -258,72 +258,7 @@
 
   <!-- Scripts de EmailJS y Carrusel -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script>
-    // Inicializar EmailJS
-    (function() {
-      emailjs.init("X0ZEsGyUSs9FDEYUF");
-    })();
 
-    // Manejo del formulario
-    const formulario = document.getElementById('formulario');
-    const mensajeExito = document.getElementById('mensaje-exito');
-    const reenviarBtn = document.getElementById('enviar-btn');
-
-    formulario.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const enviarBtn = document.querySelector('.enviar-btn');
-      if (enviarBtn) {
-        enviarBtn.disabled = true;
-        enviarBtn.textContent = "Enviando...";
-      }
-      const nombre = document.getElementById('nombre').value;
-      const email = document.getElementById('email').value;
-      const mensaje = document.getElementById('mensaje').value;
-
-      const templateParams = {
-        name: nombre,
-        email: email,
-        message: mensaje
-      };
-
-      emailjs.send("service_s0cjykb", "template_merzek2", templateParams)
-        .then(function(response) {
-          console.log('ÉXITO!', response.status, response.text);
-          formulario.style.display = 'none';
-          mensajeExito.style.display = 'block';
-          formulario.reset();
-          if (enviarBtn) {
-            enviarBtn.disabled = false;
-            enviarBtn.textContent = "Enviar";
-          }
-        })
-        .catch(function(error) {
-          console.error('ERROR...', error);
-          if (enviarBtn) {
-            enviarBtn.disabled = false;
-            enviarBtn.textContent = "Enviar";
-          }
-          formulario.style.display = 'none';
-          mensajeExito.style.display = 'block';
-        });
-    });
-
-    // Funciones del carrusel de servicios
-    function prevSlide() {
-      // Implementar lógica para deslizar al servicio anterior
-    }
-
-    function nextSlide() {
-      // Implementar lógica para deslizar al siguiente servicio
-    }
-
-    // Función para mover el carrusel de clientes (opcional)
-    function moverCarrusel(direccion) {
-      const carrusel = document.getElementById('carrusel');
-      const scrollAmount = direccion * carrusel.querySelector('.logo-cliente').offsetWidth;
-      carrusel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  </script>
 <a href="https://wa.me/5493515466434" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
   <img src="images/whatsapp-icon.png" alt="WhatsApp">
 </a>
