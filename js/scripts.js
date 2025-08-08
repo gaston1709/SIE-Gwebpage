@@ -53,9 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateServicesCarousel();
 });
 
-emailjs.init({
-  publicKey: "UUyYfU8GP-SaD6j7k",
-});
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const contactoBoton = document.querySelector(".navbar a[href='#contacto']");
