@@ -1,0 +1,61 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fefefe;
+  color: #222;
+  line-height: 1.6;
+}
+
+.landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: #ffffff;
+}
+
+.main-logo {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+.contenido {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.contenido h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.contenido p, .contenido li {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #f2f2f2;
+  border-top: 1px solid #ddd;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.footer-logo {
+  width: 100px;
+  height: auto;
+  opacity: 0.7;
+}
