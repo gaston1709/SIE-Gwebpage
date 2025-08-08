@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateServicesCarousel();
 });
 
-emailjs.init("X0ZEsGyUSs9FDEYUF");
+emailjs.init("Mo9fROd6j8U4Cv3VF");
 
 
 document.addEventListener("DOMContentLoaded", function () {
