@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 emailjs.init({
-  publicKey: "Mo9fROd6j8U4Cv3VF",
+  publicKey: "UUyYfU8GP-SaD6j7k",
 });
 
 document.addEventListener("DOMContentLoaded", function () {
