@@ -1,57 +1,3 @@
-// Carga dinámica de video vertical u horizontal + imágenes en carrusel
-document.addEventListener("DOMContentLoaded", function () {
-    const videoElement = document.getElementById("video-portada");
-    const videoSource = document.getElementById("video-source");
-
-    function esMovilYVertical() {
-        return /Mobi|Android/i.test(navigator.userAgent) && window.innerHeight > window.innerWidth;
-    }
-
-    function ajustarImagenesCarrusel() {
-        const carouselFotos = document.getElementById("carousel-fotos");
-        if (!carouselFotos) return;
-        carouselFotos.innerHTML = "";
-
-        const imagenes = esMovilYVertical()
-            ? [
-                { src: "images/vertical/foto1.jpg", alt: "Diseño vertical" },
-                { src: "images/vertical/foto2.jpg", alt: "Ensamblaje vertical" },
-                { src: "images/vertical/foto3.jpg", alt: "Testing vertical" }
-              ]
-            : [
-                { src: "images/horizontal/foto1.jpg", alt: "Diseño horizontal" },
-                { src: "images/horizontal/foto2.jpg", alt: "Ensamblaje horizontal" },
-                { src: "images/horizontal/foto3.jpg", alt: "Testing horizontal" }
-              ];
-
-        imagenes.forEach((imgData, index) => {
-            const img = document.createElement("img");
-            img.src = imgData.src;
-            img.alt = imgData.alt;
-            img.style.animationDelay = `${index * 3}s`;
-            img.classList.add("carousel-img");
-            carouselFotos.appendChild(img);
-        });
-    }
-
-    function ajustarVideo() {
-        if (!videoElement || !videoSource) return;
-        if (esMovilYVertical()) {
-            videoSource.src = "videos/video-vertical.mp4";
-            videoElement.classList.remove("horizontal");
-            videoElement.classList.add("vertical");
-        } else {
-            videoSource.src = "videos/video-horizontal.mp4";
-            videoElement.classList.remove("vertical");
-            videoElement.classList.add("horizontal");
-        }
-        videoElement.load();
-        ajustarImagenesCarrusel();
-    }
-
-    ajustarVideo();
-    window.addEventListener("resize", ajustarVideo);
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     const serviciosCarrusel = document.querySelector('.servicios .carrusel');
@@ -106,6 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Configuración inicial
     updateServicesCarousel();
 });
+
+emailjs.init("X0ZEsGyUSs9FDEYUF");
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const contactoBoton = document.querySelector(".navbar a[href='#contacto']");
