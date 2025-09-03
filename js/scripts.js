@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const contactoBoton = document.querySelector(".navbar a[href='#contacto']");
+    const contactoBoton = document.querySelector(".hero-nav a[href='#contacto']");
     const contactoBotonHero = document.getElementById("contact-btn"); // Botón en el hero
     const formularioSeccion = document.getElementById("contacto"); // Sección correcta
     const formulario = document.getElementById("formulario");
