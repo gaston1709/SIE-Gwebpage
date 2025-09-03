@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const serviceWidth = serviciosContainer.querySelector('.servicio').offsetWidth + 30; // Ancho del servicio + gap
         const visibleServices = Math.floor(containerWidth / serviceWidth);
         const totalServices = serviciosContainer.querySelectorAll('.servicio').length;
-        const maxPosition = totalServices - visibleServices;
+        const maxPosition = Math.max(totalServices - visibleServices, 0);
         
         // Limita la posición actual
         currentPosition = Math.min(currentPosition, maxPosition);
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const serviceWidth = serviciosContainer.querySelector('.servicio').offsetWidth + 30;
         const visibleServices = Math.floor(containerWidth / serviceWidth);
         const totalServices = serviciosContainer.querySelectorAll('.servicio').length;
-        const maxPosition = totalServices - visibleServices;
+        const maxPosition = Math.max(totalServices - visibleServices, 0);
         
         if (direction === 'next' && currentPosition < maxPosition) {
             currentPosition++;
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Calcula cuántos logos son visibles
         const containerWidth = carrusel.parentElement.offsetWidth;
         const visibleLogos = Math.floor(containerWidth / logoWidth);
-        const maxPosition = logos.length - visibleLogos;
+        const maxPosition = Math.max(logos.length - visibleLogos, 0);
         
         // Limita la posición actual
         currentPosition = Math.min(currentPosition, maxPosition);
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function moveCarousel(direction) {
         const containerWidth = carrusel.parentElement.offsetWidth;
         const visibleLogos = Math.floor(containerWidth / logoWidth);
-        const maxPosition = logos.length - visibleLogos;
+        const maxPosition = Math.max(logos.length - visibleLogos, 0);
         
         if (direction === 'next' && currentPosition < maxPosition) {
             currentPosition++;
