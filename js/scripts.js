@@ -1,61 +1,58 @@
-
-document.addEventListener('DOMContentLoaded', () => {
+function initServicesCarousel() {
     const serviciosCarrusel = document.querySelector('.servicios .carrusel');
     const serviciosContainer = document.querySelector('.servicios .servicios-container');
     const prevButton = document.querySelector('.servicios .carrusel-control.prev');
     const nextButton = document.querySelector('.servicios .carrusel-control.next');
-    
+
     let currentPosition = 0;
-    
+
     function updateServicesCarousel() {
         const containerWidth = serviciosCarrusel.offsetWidth;
         const serviceWidth = serviciosContainer.querySelector('.servicio').offsetWidth + 30; // Ancho del servicio + gap
         const visibleServices = Math.floor(containerWidth / serviceWidth);
         const totalServices = serviciosContainer.querySelectorAll('.servicio').length;
         const maxPosition = totalServices - visibleServices;
-        
+
         // Limita la posición actual
         currentPosition = Math.min(currentPosition, maxPosition);
-        
+
         // Calcula el desplazamiento
         const translateX = -currentPosition * serviceWidth;
         serviciosContainer.style.transform = `translateX(${translateX}px)`;
-        
+
         // Actualiza estado de los botones
         prevButton.disabled = currentPosition === 0;
         nextButton.disabled = currentPosition >= maxPosition;
     }
-    
+
     function moveServicesCarousel(direction) {
         const containerWidth = serviciosCarrusel.offsetWidth;
         const serviceWidth = serviciosContainer.querySelector('.servicio').offsetWidth + 30;
         const visibleServices = Math.floor(containerWidth / serviceWidth);
         const totalServices = serviciosContainer.querySelectorAll('.servicio').length;
         const maxPosition = totalServices - visibleServices;
-        
+
         if (direction === 'next' && currentPosition < maxPosition) {
             currentPosition++;
         } else if (direction === 'prev' && currentPosition > 0) {
             currentPosition--;
         }
-        
+
         updateServicesCarousel();
     }
-    
+
     // Event Listeners
     prevButton.addEventListener('click', () => moveServicesCarousel('prev'));
     nextButton.addEventListener('click', () => moveServicesCarousel('next'));
-    
+
     // Resize listener
     window.addEventListener('resize', updateServicesCarousel);
-    
+
     // Configuración inicial
     updateServicesCarousel();
-});
+}
 
-
-
-document.addEventListener("DOMContentLoaded", function () {
+function initContactForm() {
     const contactoBoton = document.querySelector(".navbar a[href='#contacto']");
     const contactoBotonHero = document.getElementById("contact-btn"); // Botón en el hero
     const formularioSeccion = document.getElementById("contacto"); // Sección correcta
@@ -102,59 +99,65 @@ document.addEventListener("DOMContentLoaded", function () {
         formulario.style.display = "block";
         formulario.reset();
     });
-});
+}
 
-
-document.addEventListener('DOMContentLoaded', () => {
+function initClientsCarousel() {
     const carrusel = document.getElementById('carrusel');
     const prevButton = document.querySelector('.control.prev');
     const nextButton = document.querySelector('.control.next');
-    
+
     // Configuración inicial
     let currentPosition = 0;
     const logos = document.querySelectorAll('.logo-cliente');
     const logoWidth = logos[0].offsetWidth + 30; // Ancho del logo + gap
-    
+
     function updateCarousel() {
         // Calcula cuántos logos son visibles
         const containerWidth = carrusel.parentElement.offsetWidth;
         const visibleLogos = Math.floor(containerWidth / logoWidth);
         const maxPosition = logos.length - visibleLogos;
-        
+
         // Limita la posición actual
         currentPosition = Math.min(currentPosition, maxPosition);
-        
+
         // Calcula el desplazamiento
         const translateX = -currentPosition * logoWidth;
         carrusel.style.transform = `translateX(${translateX}px)`;
-        
+
         // Actualiza estado de los botones
         prevButton.disabled = currentPosition === 0;
         nextButton.disabled = currentPosition >= maxPosition;
     }
-    
+
     function moveCarousel(direction) {
         const containerWidth = carrusel.parentElement.offsetWidth;
         const visibleLogos = Math.floor(containerWidth / logoWidth);
         const maxPosition = logos.length - visibleLogos;
-        
+
         if (direction === 'next' && currentPosition < maxPosition) {
             currentPosition++;
         } else if (direction === 'prev' && currentPosition > 0) {
             currentPosition--;
         }
-        
+
         updateCarousel();
     }
-    
+
     // Event Listeners
     prevButton.addEventListener('click', () => moveCarousel('prev'));
     nextButton.addEventListener('click', () => moveCarousel('next'));
-    
+
     // Resize listener
     window.addEventListener('resize', updateCarousel);
-    
+
     // Configuración inicial
     updateCarousel();
-});
+}
 
+function init() {
+    initServicesCarousel();
+    initContactForm();
+    initClientsCarousel();
+}
+
+document.addEventListener('DOMContentLoaded', init);
