@@ -1,25 +1,14 @@
 /* Reset y estilos base */
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
-body, html {
+html, body {
     height: 100%;
-    font-family: Arial, sans-serif;
     scroll-behavior: smooth;
     background-color: #0d1117;
-    color: #ffffff; /* Texto blanco */
-}
-
-/* --- Estilos Generales --- */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -27,7 +16,6 @@ body {
     line-height: 1.6;
     color: #f0f0f0;
 }
-
 
 /* ───────────────────────────────
    VARIABLES GLOBALES
@@ -48,11 +36,6 @@ body {
   --max-width: 1200px;
   --grid-gap : 25rem;
 }
-
-/* ───────────────────────────────
-   RESET BÁSICO
-   ─────────────────────────────── */
-*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
 
 /* ───────────────────────────────
    CONTENEDOR PRINCIPAL HERO
