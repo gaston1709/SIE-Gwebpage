@@ -42,6 +42,46 @@
     }
   }
   </script>
+  <!-- LocalBusiness para resultados locales y respuestas directas -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.sie.com.ar/#empresa",
+    "name": "S.I.E - Servicios para la Industria Electrónica",
+    "image": "https://www.sie.com.ar/images/sie-logo.png",
+    "url": "https://www.sie.com.ar/",
+    "telephone": "+54 351 546-6434",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mendoza 1422",
+      "addressLocality": "Córdoba",
+      "addressRegion": "Córdoba",
+      "postalCode": "5000",
+      "addressCountry": "AR"
+    },
+    "areaServed": "AR",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -31.397028574270774,
+      "longitude": -64.19459292361944
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ]
+  }
+  </script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8WQ3YN1TET"></script>
@@ -70,6 +110,7 @@
           <a href="#servicios">Servicios</a>
           <a href="#contacto">Contacto</a>
           <a href="#ubicacion">Ubicación</a>
+          <a href="#faq">Preguntas</a>
         </nav>
       </div>
       <div class="col-2">
@@ -204,6 +245,85 @@
       <p>Teléfono: 351 5 466-434</p>
     </div>
   </section>
+
+  <!-- Preguntas Frecuentes orientadas a respuestas directas -->
+  <section id="faq" class="faq" aria-labelledby="faq-titulo">
+    <div class="faq-container">
+      <h2 id="faq-titulo">Preguntas Frecuentes</h2>
+      <div class="faq-lista">
+        <article class="faq-item">
+          <h3>¿Qué servicios ofrece S.I.E?</h3>
+          <p>Brindamos sourcing de componentes, diseño y ensamblaje de PCB (SMT/THT), testing funcional e instrumental, y armado final de producto.</p>
+        </article>
+        <article class="faq-item">
+          <h3>¿Trabajan con prototipos o solo producción?</h3>
+          <p>Atendemos desde prototipos hasta series cortas y medianas, adaptándonos al volumen y a los plazos del proyecto.</p>
+        </article>
+        <article class="faq-item">
+          <h3>¿Cómo es el proceso de ensamblaje de PCB?</h3>
+          <p>Recibimos o adquirimos componentes, realizamos posicionamiento SMT/THT, soldadura controlada, inspección y pruebas, y finalmente el armado e integración del producto.</p>
+        </article>
+        <article class="faq-item">
+          <h3>¿En qué zonas brindan servicio?</h3>
+          <p>Operamos desde Córdoba y brindamos servicio a empresas de toda Argentina.</p>
+        </article>
+        <article class="faq-item">
+          <h3>¿Cómo puedo solicitar una cotización?</h3>
+          <p>Completá el formulario de contacto o escribinos por WhatsApp con el detalle del proyecto y tiempos estimados.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Datos estructurados FAQPage para rich results y AEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué servicios ofrece S.I.E?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brindamos sourcing de componentes, diseño y ensamblaje de PCB (SMT/THT), testing funcional e instrumental, y armado final de producto."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Trabajan con prototipos o solo producción?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Atendemos desde prototipos hasta series cortas y medianas, adaptándonos al volumen y a los plazos del proyecto."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo es el proceso de ensamblaje de PCB?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Recibimos o adquirimos componentes, realizamos posicionamiento SMT/THT, soldadura controlada, inspección y pruebas, y finalmente el armado e integración del producto."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿En qué zonas brindan servicio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Operamos desde Córdoba y brindamos servicio a empresas de toda Argentina."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo puedo solicitar una cotización?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Completá el formulario de contacto o escribinos por WhatsApp con el detalle del proyecto y tiempos estimados."
+        }
+      }
+    ]
+  }
+  </script>
 
   <!-- Botón flotante de WhatsApp -->
   <a href="https://wa.me/5493515466434" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
