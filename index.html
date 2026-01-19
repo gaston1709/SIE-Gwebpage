@@ -63,16 +63,29 @@
 
 <header id="inicio" class="hero">
   <span class="circuit" aria-hidden="true"></span>
+  <div class="hero-media" aria-hidden="true">
+    <img src="images/foto1.jpg" alt="" class="is-active">
+    <img src="images/foto2.jpg" alt="">
+    <img src="images/foto3.jpg" alt="">
+  </div>
   <div class="hero-inner">
-    <a href="/" class="hero-logo-link">
-      <img src="images/sie-logo.png" alt="S.I.E - Logo" class="hero-logo">
-    </a>
-    <nav class="hero-nav" aria-label="Navegación principal">
-      <a href="#nosotros">Nosotros</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contacto</a>
-      <a href="#ubicacion">Ubicación</a>
-    </nav>
+    <div class="col-1">
+      <a href="/" class="hero-logo-link">
+        <img src="images/sie-logo.png" alt="S.I.E - Logo" class="hero-logo">
+      </a>
+      <p class="hero-tagline">Manufactura electrónica confiable, desde prototipo hasta serie.</p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn-primary">Cotizá ahora</a>
+      </div>
+    </div>
+    <div class="col-2">
+      <nav class="hero-nav" aria-label="Navegación principal">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#ubicacion">Ubicación</a>
+      </nav>
+    </div>
   </div>
 </header>
 
@@ -89,11 +102,29 @@
     </div>
   </section>
 
+  <!-- Mini-stats -->
+  <section class="stats" id="stats">
+    <div class="stats-container">
+      <div class="stat-card">
+        <span class="stat-number">100+</span>
+        <span class="stat-label">Proyectos entregados</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">5+</span>
+        <span class="stat-label">Clientes activos</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Entregas cumplidas</span>
+      </div>
+    </div>
+  </section>
+
   <!-- Servicios -->
   <section class="servicios" id="servicios">
     <h2>Nuestros Servicios</h2>
     <div class="carrusel-container">
-      <button class="carrusel-control prev" onclick="prevSlide()" aria-label="Anterior">&#10094;</button>
+      <button class="carrusel-control prev" aria-label="Anterior">&#10094;</button>
       <div class="carrusel">
         <div class="servicios-container">
           <div class="servicio">
@@ -103,6 +134,11 @@
             <div class="servicio-contenido">
               <h3>Sourcing de materia prima</h3>
               <p>Garantizamos materiales de alta calidad a través de proveedores confiables, asegurando que cada componente cumpla con los estándares más exigentes.</p>
+              <ul class="servicio-list">
+                <li>Proveedores auditados</li>
+                <li>Trazabilidad por lote</li>
+                <li>Alternativas equivalentes</li>
+              </ul>
             </div>
           </div>
           <div class="servicio">
@@ -112,6 +148,11 @@
             <div class="servicio-contenido">
               <h3>Ensamblaje PCB</h3>
               <p>Ofrecemos ensamblaje de placas de circuito impreso utilizando tecnologías THT y SMT, con un enfoque en la precisión y la calidad.</p>
+              <ul class="servicio-list">
+                <li>SMT y THT</li>
+                <li>Control de calidad</li>
+                <li>Producción escalable</li>
+              </ul>
             </div>
           </div>
           <div class="servicio">
@@ -121,6 +162,11 @@
             <div class="servicio-contenido">
               <h3>Testing</h3>
               <p>Realizamos pruebas rigurosas para garantizar el correcto funcionamiento de cada producto, asegurando altos estándares de calidad.</p>
+              <ul class="servicio-list">
+                <li>Pruebas funcionales</li>
+                <li>Validación eléctrica</li>
+                <li>Reporte de resultados</li>
+              </ul>
             </div>
           </div>
           <div class="servicio">
@@ -130,10 +176,15 @@
             <div class="servicio-contenido">
               <h3>Armado final de producto</h3>
               <p>En la etapa final, integramos meticulosamente cada componente para entregar productos que reflejen nuestro compromiso y atención al detalle.</p>
+              <ul class="servicio-list">
+                <li>Integración completa</li>
+                <li>Embalaje y despacho</li>
+                <li>Terminación cuidada</li>
+              </ul>
             </div>
           </div>
         </div>
-        <button class="carrusel-control next" onclick="nextSlide()" aria-label="Siguiente">&#10095;</button>
+        <button class="carrusel-control next" aria-label="Siguiente">&#10095;</button>
       </div>
     </div>
   </section>
@@ -141,6 +192,7 @@
   <!-- Clientes -->
   <section class="clientes" id="clientes">
     <h2>Empresas para las que Trabajamos</h2>
+    <p class="clientes-subtitle">Más de 25 años de experiencia y proyectos con empresas líderes.</p>
     <div class="carrusel-container">
       <div class="carrusel" id="carrusel">
         <div class="logo-cliente"><img src="images/logos/logo1.png" alt="Logo cliente 1"></div>
@@ -177,9 +229,23 @@
         </div>
         <div class="contacto-whatsapp">
           <h3>O escríbenos por WhatsApp</h3>
-          <a href="https://wa.me/5493515466434" target="_blank" class="whatsapp-btn">
-            <img src="images/whatsapp-icon.png" alt="Icono de WhatsApp">
+          <a href="https://wa.me/5493515466434" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+            <img src="images/whatsapp-icon.png" alt="Icono de WhatsApp" width="32" height="32">
           </a>
+        </div>
+        <div class="contacto-instagram">
+          <h3>Seguinos en Instagram</h3>
+          <a href="https://www.instagram.com/s.i.electronica/" target="_blank" rel="noopener noreferrer" class="instagram-btn" aria-label="Instagram de S.I.E">
+            Instagram
+          </a>
+        </div>
+        <div class="contacto-details">
+          <h3>Datos rápidos</h3>
+          <ul>
+            <li>Horario: Lun a Vie, 9 a 18 hs</li>
+            <li>Mail: contacto@sie.com.ar</li>
+            <li>Dirección: Mendoza 1422, Córdoba</li>
+          </ul>
         </div>
       </div>
       <div id="mensaje-exito" class="mensaje-exito" style="display: none;">
@@ -202,14 +268,38 @@
   </section>
 
   <!-- Botón flotante de WhatsApp -->
-  <a href="https://wa.me/5493515466434" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
-    <img src="images/whatsapp-icon.png" alt="WhatsApp">
+  <a href="https://wa.me/5493515466434" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp" width="32" height="32">
+  </a>
+  <a href="https://www.instagram.com/s.i.electronica/" target="_blank" rel="noopener noreferrer" class="instagram-float" aria-label="Instagram de S.I.E">
+    <img src="images/instagram-icon.png" alt="Instagram" width="26" height="26">
   </a>
 
   <!-- Footer institucional (opcional) -->
-  <footer>
-    <p>© 2025 S.I.E | Servicios para la Industria Electrónica – Córdoba, Argentina</p>
-    <p>Desarrollado por SIE</p>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <p class="footer-title">S.I.E</p>
+        <p>Servicios para la Industria Electrónica</p>
+        <p>Córdoba, Argentina</p>
+      </div>
+      <div class="footer-links">
+        <p class="footer-title">Links rápidos</p>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#ubicacion">Ubicación</a>
+      </div>
+      <div class="footer-social">
+        <p class="footer-title">Redes</p>
+        <a href="https://www.instagram.com/s.i.electronica/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://wa.me/5493515466434" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 S.I.E | Servicios para la Industria Electrónica</p>
+      <p>Desarrollado por SIE</p>
+    </div>
   </footer>
 
   <!-- JS: SIEMPRE AL FINAL -->

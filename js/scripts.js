@@ -4,11 +4,22 @@ function initServicesCarousel() {
     const prevButton = document.querySelector('.servicios .carrusel-control.prev');
     const nextButton = document.querySelector('.servicios .carrusel-control.next');
 
+    if (!serviciosCarrusel || !serviciosContainer || !prevButton || !nextButton) {
+        return;
+    }
+
     let currentPosition = 0;
 
     function updateServicesCarousel() {
+        const firstService = serviciosContainer.querySelector('.servicio');
+        if (!firstService) {
+            return;
+        }
+
         const containerWidth = serviciosCarrusel.offsetWidth;
-        const serviceWidth = serviciosContainer.querySelector('.servicio').offsetWidth + 30; // Ancho del servicio + gap
+        const containerStyles = window.getComputedStyle(serviciosContainer);
+        const gap = parseFloat(containerStyles.gap) || 0;
+        const serviceWidth = firstService.offsetWidth + gap;
         const visibleServices = Math.floor(containerWidth / serviceWidth);
         const totalServices = serviciosContainer.querySelectorAll('.servicio').length;
 
@@ -28,8 +39,15 @@ function initServicesCarousel() {
     }
 
     function moveServicesCarousel(direction) {
+        const firstService = serviciosContainer.querySelector('.servicio');
+        if (!firstService) {
+            return;
+        }
+
         const containerWidth = serviciosCarrusel.offsetWidth;
-        const serviceWidth = serviciosContainer.querySelector('.servicio').offsetWidth + 30;
+        const containerStyles = window.getComputedStyle(serviciosContainer);
+        const gap = parseFloat(containerStyles.gap) || 0;
+        const serviceWidth = firstService.offsetWidth + gap;
         const visibleServices = Math.floor(containerWidth / serviceWidth);
         const totalServices = serviciosContainer.querySelectorAll('.servicio').length;
 
@@ -56,6 +74,28 @@ function initServicesCarousel() {
     updateServicesCarousel();
 }
 
+function initHeroCarousel() {
+    const slides = document.querySelectorAll('.hero-media img');
+    if (slides.length < 2) {
+        return;
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+        slides.forEach((slide, index) => slide.classList.toggle('is-active', index === 0));
+        return;
+    }
+
+    let currentIndex = 0;
+    slides.forEach((slide, index) => slide.classList.toggle('is-active', index === 0));
+
+    setInterval(() => {
+        slides[currentIndex].classList.remove('is-active');
+        currentIndex = (currentIndex + 1) % slides.length;
+        slides[currentIndex].classList.add('is-active');
+    }, 5000);
+}
+
 function initContactForm() {
     const contactoBoton = document.querySelector(".navbar a[href='#contacto']");
     const contactoBotonHero = document.getElementById("contact-btn"); // Botón en el hero
@@ -63,6 +103,10 @@ function initContactForm() {
     const formulario = document.getElementById("formulario");
     const mensajeExito = document.getElementById("mensaje-exito");
     const reenviarBtn = document.getElementById("reenviar-btn");
+
+    if (!formularioSeccion || !formulario || !mensajeExito || !reenviarBtn) {
+        return;
+    }
 
     // Mostrar el formulario al hacer clic en los botones de contacto
     function mostrarFormulario(event) {
@@ -110,12 +154,22 @@ function initClientsCarousel() {
     const prevButton = document.querySelector('.control.prev');
     const nextButton = document.querySelector('.control.next');
 
+    if (!carrusel || !prevButton || !nextButton) {
+        return;
+    }
+
     // Configuración inicial
     let currentPosition = 0;
     const logos = document.querySelectorAll('.logo-cliente');
-    const logoWidth = logos[0].offsetWidth + 30; // Ancho del logo + gap
+    if (!logos.length) {
+        return;
+    }
 
     function updateCarousel() {
+        const containerStyles = window.getComputedStyle(carrusel);
+        const gap = parseFloat(containerStyles.gap) || 0;
+        const logoWidth = logos[0].offsetWidth + gap; // Ancho del logo + gap
+
         // Calcula cuántos logos son visibles
         const containerWidth = carrusel.parentElement.offsetWidth;
         const visibleLogos = Math.floor(containerWidth / logoWidth);
@@ -136,6 +190,10 @@ function initClientsCarousel() {
     }
 
     function moveCarousel(direction) {
+        const containerStyles = window.getComputedStyle(carrusel);
+        const gap = parseFloat(containerStyles.gap) || 0;
+        const logoWidth = logos[0].offsetWidth + gap;
+
         const containerWidth = carrusel.parentElement.offsetWidth;
         const visibleLogos = Math.floor(containerWidth / logoWidth);
 
@@ -163,6 +221,7 @@ function initClientsCarousel() {
 }
 
 function init() {
+    initHeroCarousel();
     initServicesCarousel();
     initContactForm();
     initClientsCarousel();
