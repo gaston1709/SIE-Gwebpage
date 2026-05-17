@@ -45,12 +45,4 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- — rootelectronics.html — -->
-  <url>
-    <loc>https://www.sie.com.ar/rootelectronics.html</loc>
-    <lastmod>2025-05-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
 </urlset>
