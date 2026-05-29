@@ -716,6 +716,17 @@ body {
     resize: none;
 }
 
+/* Nota aclaratoria sobre fabricación */
+.contacto-nota {
+    font-size: 0.85rem;
+    color: #a0a0b0;
+    margin-bottom: 16px;
+    line-height: 1.4;
+    border-left: 2px solid var(--accent);
+    padding-left: 8px;
+    text-align: left;
+}
+
 /* Botón de enviar */
 .enviar-btn {
     background-color: #4CAF50;
