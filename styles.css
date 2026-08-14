@@ -284,13 +284,13 @@ button {
    ────────────────────────────────────────────────────────────────────────── */
 .hero {
   position: relative;
-  min-height: auto;
+  min-height: 82vh;
   display: flex;
   align-items: center;
   background-color: var(--bg-dark);
   border-bottom: 1px solid var(--border-color);
   overflow: hidden;
-  padding: 4.5rem 0 3.5rem;
+  padding: 5.5rem 0 4rem;
 }
 
 .hero-bg-media {
@@ -310,13 +310,13 @@ button {
 }
 
 .hero-bg-media img.is-active {
-  opacity: 0.45;
+  opacity: 0.75;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(10, 14, 23, 0.94) 0%, rgba(10, 14, 23, 0.78) 50%, rgba(10, 14, 23, 0.6) 100%);
+  background: linear-gradient(180deg, rgba(10, 14, 23, 0.65) 0%, rgba(10, 14, 23, 0.88) 100%);
   z-index: 1;
 }
 
@@ -350,35 +350,30 @@ button {
 @keyframes heroBadgeIn {
   0% {
     opacity: 0;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     transform: translateY(8px);
   }
   100% {
     opacity: 1;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     transform: translateY(0);
   }
 }
 
 .hero-text-block {
-  max-width: 820px;
-  width: 100%;
-  margin: 0 0 3.25rem 0;
-  text-align: left;
+  max-width: 960px;
+  margin-bottom: 4rem;
 }
 
 .hero-brand-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .hero-main-logo {
-  max-width: 360px;
+  max-width: 500px;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.4));
   animation: heroLogoIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
   transition: transform 0.25s ease;
 }
@@ -389,38 +384,36 @@ button {
 
 .hero-badge-clean {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: #38a169;
-  margin-bottom: 0.85rem;
+  margin-bottom: 1rem;
   animation: heroBadgeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
 }
 
 .hero h1 {
-  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
-  font-weight: 800;
+  font-size: clamp(1.85rem, 3.2vw, 2.55rem);
+  font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.02em;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   animation: heroSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
 }
 
 .hero-lead {
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   color: var(--text-secondary);
-  line-height: 1.65;
-  margin: 0 0 2rem 0;
-  max-width: 720px;
+  line-height: 1.7;
+  margin-bottom: 2.25rem;
+  max-width: 780px;
   animation: heroSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
 }
 
 .hero-buttons {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
   animation: heroSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
 }
@@ -429,31 +422,30 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.85rem 1.85rem;
+  padding: 1rem 2.2rem;
   background-color: var(--brand-green);
   color: #ffffff;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   border-radius: var(--radius);
-  transition: background-color 0.15s, transform 0.15s;
+  transition: background-color 0.15s;
 }
 
 .btn-primary-lead:hover {
   background-color: var(--brand-green-hover);
-  transform: translateY(-2px);
 }
 
 .btn-wa-lead {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1.85rem;
+  gap: 0.65rem;
+  padding: 1rem 2.2rem;
   background-color: rgba(37, 211, 102, 0.08);
   border: 1.5px solid #25d366;
   color: #25d366;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   border-radius: var(--radius);
   transition: background-color 0.15s, color 0.15s, transform 0.15s;
 }
@@ -465,13 +457,11 @@ button {
 }
 
 .hero-features-strip {
-  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   border-top: 1px solid var(--border-color);
-  padding-top: 2rem;
-  text-align: left;
+  padding-top: 2.5rem;
 }
 
 .hero-features-strip .feature-item {
@@ -485,18 +475,16 @@ button {
 .feature-item {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 0.25rem;
+  gap: 0.35rem;
 }
 
 .feature-item strong {
-  font-size: 0.975rem;
+  font-size: 1.05rem;
   color: #ffffff;
 }
 
 .feature-item span {
-  font-size: 0.825rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
 }
 
