@@ -14,6 +14,18 @@ function initMobileMenu() {
     });
 }
 
+function initReadingProgressBar() {
+    const bar = document.getElementById('scroll-progress-bar');
+    if (!bar) return;
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        bar.style.width = `${progress}%`;
+    }, { passive: true });
+}
+
 function initHeroCarousel() {
     const slides = document.querySelectorAll('.hero-bg-media img');
     if (slides.length < 2) return;
@@ -53,6 +65,7 @@ function initAnimatedStats() {
                         requestAnimationFrame(updateCount);
                     } else {
                         el.textContent = `${prefix}${target}${suffix}`;
+                        el.classList.add('stat-settled');
                     }
                 }
 
@@ -118,12 +131,27 @@ function initContactForm() {
 }
 
 function initScrollReveal() {
-    const revealTargets = document.querySelectorAll(
-        '.section-title-wrap, .service-card, .logos-grid, .contact-lead-layout, .about-simple-grid, .map-box, .clarification-box, .hero-features-strip'
+    // 1. Standalone section wrappers
+    const generalTargets = document.querySelectorAll(
+        '.section-title-wrap, .contact-lead-layout, .about-simple-grid, .map-box, .clarification-box'
     );
+    generalTargets.forEach(el => el.classList.add('scroll-reveal'));
 
-    revealTargets.forEach(el => el.classList.add('scroll-reveal'));
+    // 2. Staggered Service Cards
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach((card, idx) => {
+        card.classList.add('scroll-reveal');
+        card.style.setProperty('--reveal-delay', `${idx * 110}ms`);
+    });
 
+    // 3. Staggered Client Logos
+    const logoItems = document.querySelectorAll('.logo-item');
+    logoItems.forEach((logo, idx) => {
+        logo.classList.add('scroll-reveal');
+        logo.style.setProperty('--reveal-delay', `${idx * 65}ms`);
+    });
+
+    const allTargets = document.querySelectorAll('.scroll-reveal');
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -133,11 +161,12 @@ function initScrollReveal() {
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    revealTargets.forEach(el => observer.observe(el));
+    allTargets.forEach(el => observer.observe(el));
 }
 
 function init() {
     initMobileMenu();
+    initReadingProgressBar();
     initHeroCarousel();
     initAnimatedStats();
     initScrollReveal();
