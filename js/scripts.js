@@ -117,10 +117,30 @@ function initContactForm() {
     });
 }
 
+function initScrollReveal() {
+    const revealTargets = document.querySelectorAll(
+        '.section-title-wrap, .service-card, .logos-grid, .contact-lead-layout, .about-simple-grid, .map-box, .clarification-box, .hero-features-strip'
+    );
+
+    revealTargets.forEach(el => el.classList.add('scroll-reveal'));
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    revealTargets.forEach(el => observer.observe(el));
+}
+
 function init() {
     initMobileMenu();
     initHeroCarousel();
     initAnimatedStats();
+    initScrollReveal();
     initContactForm();
 }
 
