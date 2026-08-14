@@ -1,94 +1,24 @@
-function initServicesCarousel() {
-    const serviciosCarrusel = document.querySelector('.servicios .carrusel');
-    const serviciosContainer = document.querySelector('.servicios .servicios-container');
-    const prevButton = document.querySelector('.servicios .carrusel-control.prev');
-    const nextButton = document.querySelector('.servicios .carrusel-control.next');
+function initMobileMenu() {
+    const toggle = document.getElementById('mobile-toggle');
+    const menu = document.getElementById('main-nav');
+    if (!toggle || !menu) return;
 
-    if (!serviciosCarrusel || !serviciosContainer || !prevButton || !nextButton) {
-        return;
-    }
+    toggle.addEventListener('click', () => {
+        menu.classList.toggle('is-open');
+    });
 
-    let currentPosition = 0;
-
-    function updateServicesCarousel() {
-        const firstService = serviciosContainer.querySelector('.servicio');
-        if (!firstService) {
-            return;
-        }
-
-        const containerWidth = serviciosCarrusel.offsetWidth;
-        const containerStyles = window.getComputedStyle(serviciosContainer);
-        const gap = parseFloat(containerStyles.gap) || 0;
-        const serviceWidth = firstService.offsetWidth + gap;
-        const visibleServices = Math.floor(containerWidth / serviceWidth);
-        const totalServices = serviciosContainer.querySelectorAll('.servicio').length;
-
-        const maxPosition = Math.max(totalServices - visibleServices, 0);
-        
-
-        // Limita la posición actual
-        currentPosition = Math.min(currentPosition, maxPosition);
-
-        // Calcula el desplazamiento
-        const translateX = -currentPosition * serviceWidth;
-        serviciosContainer.style.transform = `translateX(${translateX}px)`;
-
-        // Actualiza estado de los botones
-        prevButton.disabled = currentPosition === 0;
-        nextButton.disabled = currentPosition >= maxPosition;
-    }
-
-    function moveServicesCarousel(direction) {
-        const firstService = serviciosContainer.querySelector('.servicio');
-        if (!firstService) {
-            return;
-        }
-
-        const containerWidth = serviciosCarrusel.offsetWidth;
-        const containerStyles = window.getComputedStyle(serviciosContainer);
-        const gap = parseFloat(containerStyles.gap) || 0;
-        const serviceWidth = firstService.offsetWidth + gap;
-        const visibleServices = Math.floor(containerWidth / serviceWidth);
-        const totalServices = serviciosContainer.querySelectorAll('.servicio').length;
-
-        const maxPosition = Math.max(totalServices - visibleServices, 0);
-        
-
-        if (direction === 'next' && currentPosition < maxPosition) {
-            currentPosition++;
-        } else if (direction === 'prev' && currentPosition > 0) {
-            currentPosition--;
-        }
-
-        updateServicesCarousel();
-    }
-
-    // Event Listeners
-    prevButton.addEventListener('click', () => moveServicesCarousel('prev'));
-    nextButton.addEventListener('click', () => moveServicesCarousel('next'));
-
-    // Resize listener
-    window.addEventListener('resize', updateServicesCarousel);
-
-    // Configuración inicial
-    updateServicesCarousel();
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('is-open');
+        });
+    });
 }
 
 function initHeroCarousel() {
-    const slides = document.querySelectorAll('.hero-media img');
-    if (slides.length < 2) {
-        return;
-    }
-
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-        slides.forEach((slide, index) => slide.classList.toggle('is-active', index === 0));
-        return;
-    }
+    const slides = document.querySelectorAll('.hero-bg-media img');
+    if (slides.length < 2) return;
 
     let currentIndex = 0;
-    slides.forEach((slide, index) => slide.classList.toggle('is-active', index === 0));
-
     setInterval(() => {
         slides[currentIndex].classList.remove('is-active');
         currentIndex = (currentIndex + 1) % slides.length;
@@ -96,30 +26,61 @@ function initHeroCarousel() {
     }, 5000);
 }
 
+function initAnimatedStats() {
+    const statElements = document.querySelectorAll('.stat-num[data-target]');
+    if (!statElements.length) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-target'), 10);
+                const prefix = el.getAttribute('data-prefix') || '';
+                const suffix = el.getAttribute('data-suffix') || '';
+                const duration = 3000;
+                const startTime = performance.now();
+
+                function updateCount(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    // easeOutQuart for smooth industrial feel
+                    const ease = 1 - Math.pow(1 - progress, 4);
+                    const current = Math.floor(ease * target);
+
+                    el.textContent = `${prefix}${current}${suffix}`;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        el.textContent = `${prefix}${target}${suffix}`;
+                    }
+                }
+
+                requestAnimationFrame(updateCount);
+                obs.unobserve(el);
+            }
+        });
+    }, { threshold: 0.35 });
+
+    statElements.forEach(el => observer.observe(el));
+}
+
 function initContactForm() {
-    const contactoBoton = document.querySelector(".navbar a[href='#contacto']");
-    const contactoBotonHero = document.getElementById("contact-btn"); // Botón en el hero
-    const formularioSeccion = document.getElementById("contacto"); // Sección correcta
     const formulario = document.getElementById("formulario");
     const mensajeExito = document.getElementById("mensaje-exito");
     const reenviarBtn = document.getElementById("reenviar-btn");
 
-    if (!formularioSeccion || !formulario || !mensajeExito || !reenviarBtn) {
-        return;
-    }
+    if (!formulario || !mensajeExito || !reenviarBtn) return;
 
-    // Mostrar el formulario al hacer clic en los botones de contacto
-    function mostrarFormulario(event) {
-        event.preventDefault();
-        formularioSeccion.scrollIntoView({ behavior: "smooth" });
-    }
-
-    if (contactoBotonHero) contactoBotonHero.addEventListener("click", mostrarFormulario);
-    if (contactoBoton) contactoBoton.addEventListener("click", mostrarFormulario);
-
-    // Envío del formulario con EmailJS
     formulario.addEventListener("submit", function (event) {
         event.preventDefault();
+
+        const submitBtn = formulario.querySelector('button[type="submit"]');
+        const originalText = submitBtn ? submitBtn.innerText : '';
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Enviando...';
+        }
 
         const nombre = document.getElementById("nombre").value;
         const email = document.getElementById("email").value;
@@ -134,14 +95,21 @@ function initContactForm() {
             console.log("ÉXITO!", response.status, response.text);
             formulario.style.display = "none";
             mensajeExito.style.display = "block";
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalText;
+            }
         })
         .catch(error => {
             console.error("ERROR...", error);
-            alert("Hubo un error al enviar el correo.");
+            alert("Hubo un error al enviar el correo. Por favor comunicate directamente por WhatsApp al +54 9 351 672-3910.");
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalText;
+            }
         });
     });
 
-    // Permitir reenviar el formulario
     reenviarBtn.addEventListener("click", function () {
         mensajeExito.style.display = "none";
         formulario.style.display = "block";
@@ -149,82 +117,11 @@ function initContactForm() {
     });
 }
 
-function initClientsCarousel() {
-    const carrusel = document.getElementById('carrusel');
-    const prevButton = document.querySelector('.control.prev');
-    const nextButton = document.querySelector('.control.next');
-
-    if (!carrusel || !prevButton || !nextButton) {
-        return;
-    }
-
-    // Configuración inicial
-    let currentPosition = 0;
-    const logos = document.querySelectorAll('.logo-cliente');
-    if (!logos.length) {
-        return;
-    }
-
-    function updateCarousel() {
-        const containerStyles = window.getComputedStyle(carrusel);
-        const gap = parseFloat(containerStyles.gap) || 0;
-        const logoWidth = logos[0].offsetWidth + gap; // Ancho del logo + gap
-
-        // Calcula cuántos logos son visibles
-        const containerWidth = carrusel.parentElement.offsetWidth;
-        const visibleLogos = Math.floor(containerWidth / logoWidth);
-
-        const maxPosition = Math.max(logos.length - visibleLogos, 0);
-
-
-        // Limita la posición actual
-        currentPosition = Math.min(currentPosition, maxPosition);
-
-        // Calcula el desplazamiento
-        const translateX = -currentPosition * logoWidth;
-        carrusel.style.transform = `translateX(${translateX}px)`;
-
-        // Actualiza estado de los botones
-        prevButton.disabled = currentPosition === 0;
-        nextButton.disabled = currentPosition >= maxPosition;
-    }
-
-    function moveCarousel(direction) {
-        const containerStyles = window.getComputedStyle(carrusel);
-        const gap = parseFloat(containerStyles.gap) || 0;
-        const logoWidth = logos[0].offsetWidth + gap;
-
-        const containerWidth = carrusel.parentElement.offsetWidth;
-        const visibleLogos = Math.floor(containerWidth / logoWidth);
-
-        const maxPosition = Math.max(logos.length - visibleLogos, 0);
-        
-
-        if (direction === 'next' && currentPosition < maxPosition) {
-            currentPosition++;
-        } else if (direction === 'prev' && currentPosition > 0) {
-            currentPosition--;
-        }
-
-        updateCarousel();
-    }
-
-    // Event Listeners
-    prevButton.addEventListener('click', () => moveCarousel('prev'));
-    nextButton.addEventListener('click', () => moveCarousel('next'));
-
-    // Resize listener
-    window.addEventListener('resize', updateCarousel);
-
-    // Configuración inicial
-    updateCarousel();
-}
-
 function init() {
+    initMobileMenu();
     initHeroCarousel();
-    initServicesCarousel();
+    initAnimatedStats();
     initContactForm();
-    initClientsCarousel();
 }
 
 document.addEventListener('DOMContentLoaded', init);
