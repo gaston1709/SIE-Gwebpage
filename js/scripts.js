@@ -152,7 +152,7 @@ function initContactForm() {
 function initScrollReveal() {
     // 1. Standalone section wrappers
     const generalTargets = document.querySelectorAll(
-        '.section-title-wrap, .contact-lead-layout, .about-simple-grid, .map-box, .clarification-box'
+        '.section-title-wrap, .contact-lead-layout, .about-simple-grid, .map-box, .clarification-box, .tech-specs-wrap, .faq-accordion-wrap'
     );
     generalTargets.forEach(el => el.classList.add('scroll-reveal'));
 
@@ -183,6 +183,62 @@ function initScrollReveal() {
     allTargets.forEach(el => observer.observe(el));
 }
 
+function initShareButton() {
+    const shareBtns = document.querySelectorAll('.btn-share-trigger');
+    if (!shareBtns.length) return;
+
+    function showShareToast(message) {
+        let toast = document.getElementById('share-toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'share-toast';
+            toast.className = 'share-toast';
+            document.body.appendChild(toast);
+        }
+        toast.textContent = message;
+        toast.classList.add('is-visible');
+        setTimeout(() => {
+            toast.classList.remove('is-visible');
+        }, 2800);
+    }
+
+    function copyUrlToClipboard() {
+        const url = window.location.origin + window.location.pathname;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(() => {
+                showShareToast('¡Enlace copiado al portapapeles!');
+            }).catch(() => {
+                showShareToast('Enlace: ' + url);
+            });
+        } else {
+            showShareToast('Enlace: ' + url);
+        }
+    }
+
+    shareBtns.forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const shareData = {
+                title: 'S.I.E | Montaje y Manufactura Electrónica en Argentina',
+                text: 'Soluciones de ensamble de placas SMT/THT, sourcing de componentes y testing en Córdoba, Argentina.',
+                url: window.location.origin + window.location.pathname
+            };
+
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                } catch (err) {
+                    if (err.name !== 'AbortError') {
+                        copyUrlToClipboard();
+                    }
+                }
+            } else {
+                copyUrlToClipboard();
+            }
+        });
+    });
+}
+
 function init() {
     initMobileMenu();
     initReadingProgressBar();
@@ -190,6 +246,8 @@ function init() {
     initAnimatedStats();
     initScrollReveal();
     initContactForm();
+    initShareButton();
 }
 
 document.addEventListener('DOMContentLoaded', init);
+

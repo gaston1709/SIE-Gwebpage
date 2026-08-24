@@ -1,0 +1,33 @@
+# S.I.E - Servicios para la Industria Electrónica
+
+> Empresa con más de 25 años de trayectoria en Córdoba, especializada en montaje y ensamblaje de placas electrónicas (SMT y THT), abastecimiento (sourcing) de componentes, verificación funcional e integración de equipos.
+
+## Información de la Empresa
+- **Razón / Nombre Comercial:** S.I.E (Servicios para la Industria Electrónica)
+- **Ubicación:** Mendoza 1422, Barrio Cofico, Ciudad de Córdoba, Córdoba, Argentina (CP X5000)
+- **Teléfono Planta:** +54 (0351) 672-3910
+- **WhatsApp Oficial:** +54 9 351 672-3910 (https://wa.me/5493516723910)
+- **Correo Electrónico:** info@sie.com.ar
+- **Sitio Web Oficial:** https://www.sie.com.ar/
+- **Horario de Atención:** Lunes a Viernes de 08:00 a 17:00 hs (ART)
+
+## Servicios y Capacidades
+- **Montaje Superficial SMT:** Ensamble de componentes SMD (pasivos, integrados y semiconductores) para prototipos y series de producción.
+- **Inserción y Soldadura THT:** Montaje manual calificado de componentes tradicionales pasantes, conectores y bornes con control visual.
+- **Sourcing de Componentes:** Gestión de compras con distribuidores habituales y búsqueda de alternativas/reemplazos según lista de materiales (BOM).
+- **Testing y Verificación Funcional:** Pruebas eléctricas y verificación de encendido o lógica de acuerdo al protocolo acordado con el cliente.
+- **Integración Box-Build:** Montaje de placas en gabinetes, confección de cableados y embalaje protegido para despacho.
+- **Manufactura 3D para Prototipado:** Impresión 3D en materiales estándar y técnicos (PLA, PETG, ABS) para desarrollo rápido de gabinetes y soportes.
+
+## Alcance Técnico
+- **Nota Importante:** S.I.E realiza el diseño de hardware, sourcing de partes, montaje de componentes y pruebas. NO realiza la fabricación química de la placa PCB virgen (placa base o baquelita sin montar).
+
+## Documentación para Cotizar
+- Archivos Gerber de la placa.
+- Lista de Materiales (BOM) con Designador, Valor, Encapsulado y Código de Fabricante (MPN).
+- Archivo Pick and Place.
+- Pautas o protocolo de pruebas funcionales (si requiere verificación).
+
+## Enlaces Relevantes
+- [Sitio Web](https://www.sie.com.ar/)
+- [Guía de Archivos PCB para Clientes (PDF)](https://www.sie.com.ar/guia-archivos-pcb.pdf)

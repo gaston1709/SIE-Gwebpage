@@ -17,6 +17,123 @@
   <meta property="og:url" content="https://www.sie.com.ar/">
   <meta property="og:type" content="website">
 
+  <!-- Google Search Console Verification (Reemplazar con el token de GSC) -->
+  <meta name="google-site-verification" content="GSC_VERIFICATION_CODE_PLACEHOLDER">
+
+  <!-- Google Analytics 4 (GA4) Placeholder: Descomentar e insertar ID de medición (G-XXXXXXXXXX) -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
+  <!-- Structured Data / JSON-LD: Schema de Negocio Local (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "S.I.E - Servicios para la Industria Electrónica",
+    "alternateName": "S.I.E Electrónica",
+    "description": "Servicios de manufactura electrónica, ensamble SMT y THT, sourcing de componentes, testing de placas e integración de equipos en Córdoba, Argentina.",
+    "url": "https://www.sie.com.ar/",
+    "logo": "https://www.sie.com.ar/images/sie-logo.png",
+    "image": "https://www.sie.com.ar/images/sie-logo.png",
+    "telephone": "+54-351-672-3910",
+    "email": "info@sie.com.ar",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mendoza 1422",
+      "addressLocality": "Córdoba",
+      "addressRegion": "Córdoba",
+      "postalCode": "X5000",
+      "addressCountry": "AR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -31.397028,
+      "longitude": -64.194592
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.instagram.com/s.i.electronica/"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data / JSON-LD: Schema de Preguntas Frecuentes (FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Fabrican la placa de circuito impreso (PCB virgen)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. En S.I.E no realizamos la fabricación química de la placa PCB virgen (placa base o baquelita sin montar). Nos especializamos en diseño de hardware, sourcing de componentes, montaje SMT/THT, pruebas funcionales e integración final."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo proveer mis propios componentes o ustedes realizan el sourcing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trabajamos bajo ambas modalidades: 'Llave en mano' (Full Turnkey), donde gestionamos la compra de los componentes de la BOM a través de distribuidores autorizados, o 'Consignado', donde el cliente provee los componentes y realizamos el montaje y control."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Tienen cantidades mínimas de producción (MOQ)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No tenemos un MOQ rígido. Acompañamos a nuestros clientes desde prototipos y lotes piloto hasta series productivas de media escala."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué archivos y documentación se necesitan para solicitar una cotización?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Para cotizar requerimos: 1) Archivos Gerber de la placa, 2) Lista de Materiales (BOM) con código de fabricante (MPN) y encapsulados, 3) Archivo Pick and Place con las coordenadas de montaje y 4) Protocolo o pautas de prueba si se requiere verificación."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Realizan pruebas y control a las placas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Realizamos control visual de armado y pruebas de encendido o funcionales de acuerdo al protocolo acordado con el cliente antes de la entrega."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Realizan envíos al interior del país?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Realizamos envíos a todo el país mediante transporte o encomienda con el embalaje y la protección adecuada para el traslado seguro de las placas."
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -30,6 +147,10 @@
         <span>info@sie.com.ar</span>
       </div>
       <div class="topbar-actions">
+        <button type="button" class="topbar-share btn-share-trigger" aria-label="Compartir enlace de la página">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+          Compartir
+        </button>
         <a href="https://wa.me/5493516723910" target="_blank" rel="noopener noreferrer" class="topbar-wa">
           Consultar por WhatsApp
         </a>
@@ -46,7 +167,9 @@
 
       <nav class="main-nav" id="main-nav">
         <a href="#que-hacemos">Qué Hacemos</a>
+        <a href="#especificaciones">Especificaciones</a>
         <a href="#clientes">Clientes</a>
+        <a href="#faq">Preguntas Frecuentes</a>
         <a href="guia-archivos-pcb.pdf" target="_blank" rel="noopener noreferrer">Guía PCB</a>
         <a href="#nosotros">Empresa</a>
         <a href="#ubicacion">Ubicación</a>
@@ -65,9 +188,9 @@
   <!-- Hero Section orientado a Conversión -->
   <section id="inicio" class="hero">
     <div class="hero-bg-media">
-      <img src="images/foto1.jpg" alt="Línea de montaje electrónico" class="is-active">
-      <img src="images/foto2.jpg" alt="Soldadura e inspección SMT">
-      <img src="images/foto3.jpg" alt="Control de calidad y testing">
+      <img src="images/foto1.jpg" alt="Línea de montaje superficial SMT" class="is-active">
+      <img src="images/foto2.jpg" alt="Inspección y soldadura de placas electrónicas">
+      <img src="images/foto3.jpg" alt="Banco de pruebas y verificación de circuitos">
     </div>
     <div class="hero-overlay"></div>
 
@@ -79,7 +202,7 @@
         <div class="hero-badge-clean">MÁS DE 25 AÑOS DE EXPERIENCIA EN EL RUBRO</div>
         <h1>Manufactura Electrónica Profesional</h1>
         <p class="hero-lead">
-          Ensamble de placas <strong>SMT y THT</strong>, sourcing de componentes, control de calidad, testing funcional y manufactura digital en Córdoba, Argentina.
+          Ensamble de placas <strong>SMT y THT</strong>, sourcing de componentes, control de calidad, testing funcional e integración en Córdoba, Argentina.
         </p>
         <div class="hero-buttons">
           <a href="#contacto" class="btn-primary-lead" id="contact-btn">Cotizar Ahora</a>
@@ -95,11 +218,11 @@
         </div>
         <div class="feature-item">
           <strong>Sourcing de Partes</strong>
-          <span>Gestión y trazabilidad de componentes</span>
+          <span>Gestión de componentes y compras</span>
         </div>
         <div class="feature-item">
-          <strong>Testing al 100%</strong>
-          <span>Validación eléctrica y funcional</span>
+          <strong>Testing Funcional</strong>
+          <span>Verificación según protocolo</span>
         </div>
         <div class="feature-item">
           <strong>Entrega en Término</strong>
@@ -122,15 +245,15 @@
         <!-- Servicio 1 -->
         <div class="service-card">
           <div class="service-img-wrap">
-            <img src="images/services/sourcing.jpg" alt="Sourcing de componentes electrónicos">
+            <img src="images/services/sourcing.jpg" alt="Sourcing y abastecimiento de componentes electrónicos">
           </div>
           <div class="service-body">
             <h3>Sourcing de Componentes</h3>
-            <p>Adquisición estratégica y abastecimiento de componentes electrónicos con distribuidores oficiales y proveedores auditados.</p>
+            <p>Adquisición y abastecimiento de componentes electrónicos con distribuidores oficiales y proveedores de confianza.</p>
             <ul class="service-check-list">
               <li>Gestión integral de BOM (Lista de materiales)</li>
-              <li>Trazabilidad y control de autenticidad</li>
               <li>Búsqueda de equivalentes y reemplazos</li>
+              <li>Seguimiento de compras y entregas</li>
             </ul>
           </div>
         </div>
@@ -138,15 +261,15 @@
         <!-- Servicio 2 -->
         <div class="service-card">
           <div class="service-img-wrap">
-            <img src="images/services/EnsamblajePCB.jpg" alt="Ensamblaje PCB SMT y THT">
+            <img src="images/services/EnsamblajePCB.jpg" alt="Ensamblaje y montaje de placas PCB SMT y THT">
           </div>
           <div class="service-body">
             <h3>Montaje y Ensamblaje (SMT / THT)</h3>
-            <p>Montaje superficial de alta precisión (SMD) y tecnología de inserción tradicional (THT) sobre placas provistas o gestionadas.</p>
+            <p>Montaje superficial (SMD) y tecnología de inserción tradicional (THT) sobre placas provistas o gestionadas.</p>
             <ul class="service-check-list">
-              <li>Montaje SMD paso fino y densidad</li>
+              <li>Montaje SMD de componentes pasivos y activos</li>
               <li>Inserción y soldadura calificada THT</li>
-              <li>Inspección óptica y control de juntas</li>
+              <li>Control visual de placas y armado</li>
             </ul>
           </div>
         </div>
@@ -154,15 +277,15 @@
         <!-- Servicio 3 -->
         <div class="service-card">
           <div class="service-img-wrap">
-            <img src="images/services/Testing.jpg" alt="Testing funcional de circuitos">
+            <img src="images/services/Testing.jpg" alt="Testing funcional y control de calidad de placas">
           </div>
           <div class="service-body">
             <h3>Testing y Control Funcional</h3>
-            <p>Pruebas eléctricas y de funcionamiento de acuerdo a protocolos técnicos para garantizar que cada placa entregada opere sin fallas.</p>
+            <p>Pruebas eléctricas y verificación de funcionamiento de acuerdo a las especificaciones y protocolos acordados.</p>
             <ul class="service-check-list">
-              <li>Verificación bajo protocolo funcional</li>
-              <li>Control de alimentación y cortocircuitos</li>
-              <li>Reporte de conformidad por lote</li>
+              <li>Verificación bajo protocolo funcional acordado</li>
+              <li>Control de alimentación y encendido</li>
+              <li>Revisión previa a la entrega</li>
             </ul>
           </div>
         </div>
@@ -170,15 +293,15 @@
         <!-- Servicio 4 -->
         <div class="service-card">
           <div class="service-img-wrap">
-            <img src="images/services/ArmadoFinal.jpg" alt="Armado final e integración electromecánica">
+            <img src="images/services/ArmadoFinal.jpg" alt="Armado final e integración box-build">
           </div>
           <div class="service-body">
             <h3>Armado Final e Integración (Box-Build)</h3>
-            <p>Integración completa del producto: conexionado, arneses de cables, montaje en gabinetes, etiquetado y embalaje listo para su distribución.</p>
+            <p>Integración de producto: conexionado, arneses de cables, montaje en gabinetes, rotulado y empaque final.</p>
             <ul class="service-check-list">
-              <li>Integración mecánica y eléctrica en gabinete</li>
-              <li>Confección de cables y arneses</li>
-              <li>Embalaje industrial y rotulado</li>
+              <li>Montaje de placas en gabinetes</li>
+              <li>Confección de cableados y arneses</li>
+              <li>Embalaje protegido para transporte</li>
             </ul>
           </div>
         </div>
@@ -186,15 +309,15 @@
         <!-- Servicio 5 -->
         <div class="service-card">
           <div class="service-img-wrap">
-            <img src="images/services/BBLH2D.jpg" alt="Manufactura digital 3D de ingeniería">
+            <img src="images/services/BBLH2D.jpg" alt="Manufactura 3D para prototipado y carcasas">
           </div>
           <div class="service-body">
-            <h3>Manufactura Digital 3D</h3>
-            <p>Fabricación aditiva técnica de alta velocidad para prototipado rápido de gabinetes, soportes y carcasas con polímeros de ingeniería.</p>
+            <h3>Manufactura 3D para Prototipado</h3>
+            <p>Impresión 3D orientada al desarrollo y validación de gabinetes, soportes y carcasas para proyectos electrónicos.</p>
             <ul class="service-check-list">
-              <li>Materiales técnicos: Nylon, fibra de carbono, PETG</li>
-              <li>Prototipado rápido de envolventes y piezas</li>
-              <li>Ajustes milimétricos y producción seriada</li>
+              <li>Materiales estándar y técnicos (PLA, PETG, ABS)</li>
+              <li>Prototipado rápido de carcasas y piezas a medida</li>
+              <li>Adaptación dimensional al PCB</li>
             </ul>
           </div>
         </div>
@@ -207,8 +330,71 @@
     </div>
   </section>
 
-  <!-- CLIENTES (FOTOS/LOGOS GRANDES Y FRAMELESS) -->
-  <section id="clientes" class="section-block bg-dark">
+  <!-- TABLA DE ESPECIFICACIONES TÉCNICAS -->
+  <section id="especificaciones" class="section-block bg-dark">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2>Especificaciones Técnicas</h2>
+        <p>Resumen de nuestras capacidades operativas y modalidades de trabajo.</p>
+      </div>
+
+      <div class="tech-specs-wrap">
+        <div class="table-responsive">
+          <table class="tech-specs-table">
+            <thead>
+              <tr>
+                <th scope="col">Proceso / Servicio</th>
+                <th scope="col">Capacidades y Alcance</th>
+                <th scope="col">Modalidad</th>
+                <th scope="col">Control y Verificación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Montaje SMT</strong></td>
+                <td>Componentes SMD pasivos y activos, ICs y semiconductores</td>
+                <td>Prototipos y series</td>
+                <td>Control visual de armado</td>
+              </tr>
+              <tr>
+                <td><strong>Montaje THT</strong></td>
+                <td>Inserción y soldadura de componentes pasantes, conectores y bornes</td>
+                <td>Lotes a medida</td>
+                <td>Soldadura manual calificada</td>
+              </tr>
+              <tr>
+                <td><strong>Sourcing de BOM</strong></td>
+                <td>Gestión de compras con distribuidores habituales y búsqueda de equivalentes</td>
+                <td>Llave en Mano o Consignado</td>
+                <td>Control según lista de materiales</td>
+              </tr>
+              <tr>
+                <td><strong>Testing Funcional</strong></td>
+                <td>Verificación de encendido, tensiones y pruebas según protocolo técnico</td>
+                <td>A coordinar con el cliente</td>
+                <td>Control previo a la entrega</td>
+              </tr>
+              <tr>
+                <td><strong>Integración Box-Build</strong></td>
+                <td>Montaje en gabinetes plásticos o metálicos, cableados y rotulado</td>
+                <td>Equipos armados</td>
+                <td>Embalaje protegido para traslado</td>
+              </tr>
+              <tr>
+                <td><strong>Manufactura 3D</strong></td>
+                <td>Impresión 3D en PLA, PETG o ABS para carcasas y soportes</td>
+                <td>Prototipos y piezas personalizadas</td>
+                <td>Ajuste dimensional con la placa</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTES (LOGOS GRANDES Y FRAMELESS) -->
+  <section id="clientes" class="section-block bg-surface">
     <div class="container">
       <div class="section-title-wrap">
         <h2>Empresas que Confían en Nosotros</h2>
@@ -216,14 +402,96 @@
       </div>
 
       <div class="logos-grid frameless">
-        <div class="logo-item"><img src="images/logos/logo1.png" alt="Empresa Cliente"></div>
-        <div class="logo-item"><img src="images/logos/logo2.png" alt="Empresa Cliente"></div>
-        <div class="logo-item"><img src="images/logos/logo3.png" alt="Empresa Cliente"></div>
-        <div class="logo-item"><img src="images/logos/logo4.png" alt="Empresa Cliente"></div>
-        <div class="logo-item"><img src="images/logos/logo5.png" alt="Empresa Cliente"></div>
-        <div class="logo-item"><img src="images/logos/logo6.png" alt="Empresa Cliente"></div>
-        <div class="logo-item"><img src="images/logos/logo7.png" alt="Empresa Cliente"></div>
-        <div class="logo-item"><img src="images/logos/logo8.png" alt="Empresa Cliente"></div>
+        <div class="logo-item"><img src="images/logos/logo1.png" alt="Empresa Cliente del sector tecnológico e industrial"></div>
+        <div class="logo-item"><img src="images/logos/logo2.png" alt="Empresa Cliente del sector de automatización y electrónica"></div>
+        <div class="logo-item"><img src="images/logos/logo3.png" alt="Empresa Cliente del sector tecnológico e industrial"></div>
+        <div class="logo-item"><img src="images/logos/logo4.png" alt="Empresa Cliente del sector de equipamiento electrónico"></div>
+        <div class="logo-item"><img src="images/logos/logo5.png" alt="Empresa Cliente de desarrollo e innovación de hardware"></div>
+        <div class="logo-item"><img src="images/logos/logo6.png" alt="Empresa Cliente del sector tecnológico e industrial"></div>
+        <div class="logo-item"><img src="images/logos/logo7.png" alt="Empresa Cliente del sector de control y sensores"></div>
+        <div class="logo-item"><img src="images/logos/logo8.png" alt="Empresa Cliente del sector de manufactura y electrónica"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES (FAQ) -->
+  <section id="faq" class="section-block bg-dark">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2>Preguntas Frecuentes</h2>
+        <p>Respuestas a las consultas habituales sobre nuestros servicios de ensamble y manufactura.</p>
+      </div>
+
+      <div class="faq-accordion-wrap">
+        <details class="faq-item" open>
+          <summary class="faq-question">
+            <span>¿Fabrican la placa de circuito impreso (PCB virgen)?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p><strong>No realizamos el proceso químico de fabricación de la placa virgen</strong> (placa base o baquelita sin montar). En S.I.E nos especializamos en diseño de hardware, sourcing de componentes, montaje SMT/THT sobre placas provistas o gestionadas, control de calidad, testing funcional e integración en gabinetes.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>¿Puedo proveer mis propios componentes o ustedes hacen el sourcing?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Trabajamos bajo ambas modalidades:</p>
+            <ul>
+              <li><strong>Llave en mano (Full Turnkey):</strong> Nosotros nos encargamos de la compra de los componentes de la BOM con distribuidores autorizados.</li>
+              <li><strong>Consignado:</strong> Vos nos entregás los componentes y las placas, y nosotros realizamos el montaje, soldado e inspección.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>¿Tienen cantidades mínimas de producción (MOQ)?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>No exigimos un mínimo estricto. Brindamos soporte desde prototipos de validación y preseries de pocas unidades hasta lotes productivos seriados de media escala.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>¿Qué archivos y documentación se necesitan para cotizar?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Para brindarte un presupuesto ágil y exacto precisamos:</p>
+            <ul>
+              <li><strong>Archivos Gerber:</strong> Archivos Gerber de la placa (cobre, máscara, serigrafía y perforaciones).</li>
+              <li><strong>Lista de Materiales (BOM):</strong> En Excel/CSV con designadores, encapsulados y códigos de fabricante (MPN).</li>
+              <li><strong>Archivo Pick and Place:</strong> Archivo con la posición y orientación de los componentes SMD.</li>
+            </ul>
+            <p>Podés consultar todos los detalles en nuestra <a href="guia-archivos-pcb.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--brand-green); font-weight: 600; text-decoration: underline;">Guía de Archivos PCB (PDF)</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>¿Realizan pruebas y control a las placas?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Sí. Realizamos control visual de armado y pruebas de encendido o funcionales de acuerdo a las pautas y requerimientos acordados previamente con cada cliente.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>¿Realizan envíos al interior de Argentina?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Sí, despachamos a todo el país mediante transporte o encomienda, con el embalaje y la protección adecuada para asegurar el cuidado de las placas durante el traslado.</p>
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -333,7 +601,7 @@
             <strong>S.I.E (Servicios para la Industria Electrónica)</strong> es una empresa con más de 25 años de trayectoria en Córdoba especializada en los procesos críticos de producción y armado de placas electrónicas.
           </p>
           <p>
-            Trabajamos con clientes de todo el país brindando soporte técnico, montaje de precisión, abastecimiento de insumos y verificación funcional rigurosa para que cada producto llegue al mercado en óptimas condiciones.
+            Trabajamos con clientes de todo el país brindando soporte técnico, montaje calificado, abastecimiento de insumos y verificación funcional para que cada producto llegue en óptimas condiciones.
           </p>
         </div>
         <div class="about-stats-box">
@@ -347,7 +615,7 @@
           </div>
           <div class="stat-unit">
             <div class="stat-num" data-suffix="%" data-target="100">100%</div>
-            <div class="stat-txt">Control funcional y calidad de entrega</div>
+            <div class="stat-txt">Compromiso y atención técnica</div>
           </div>
         </div>
       </div>
@@ -374,6 +642,12 @@
       <div>
         <img src="images/sie-logo.png" alt="S.I.E" class="footer-logo">
         <p>Servicios para la Industria Electrónica. Montaje SMT/THT, abastecimiento de componentes, testing e integración en Córdoba, Argentina.</p>
+        <div class="footer-share-wrap">
+          <button type="button" class="btn-share-trigger footer-share-btn" aria-label="Compartir enlace del sitio">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Compartir Página
+          </button>
+        </div>
       </div>
 
       <div>
@@ -381,7 +655,9 @@
         <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#que-hacemos">Qué Hacemos</a></li>
+          <li><a href="#especificaciones">Especificaciones</a></li>
           <li><a href="#clientes">Clientes</a></li>
+          <li><a href="#faq">Preguntas Frecuentes</a></li>
           <li><a href="guia-archivos-pcb.pdf" target="_blank" rel="noopener noreferrer">Guía de Archivos PCB (PDF)</a></li>
           <li><a href="#contacto">Cotizaciones</a></li>
           <li><a href="#ubicacion">Ubicación</a></li>

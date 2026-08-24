@@ -1,0 +1,9 @@
+# robots.txt para https://www.sie.com.ar/
+User-agent: *
+Allow: /
+
+# Evitar rastreo de paginaciones inexistentes o carpetas privadas
+Disallow: /page/
+
+# Ubicación del Sitemap XML
+Sitemap: https://www.sie.com.ar/sitemap.xml
