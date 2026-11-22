@@ -103,6 +103,52 @@
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
           "opens": "08:00",
           "closes": "17:00"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Líneas de Hardware Industrial Mayorista S.I.E",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Distribución Mayorista de Mini PCs Fanless Industriales",
+                "serviceType": "Venta mayorista B2B de hardware industrial",
+                "description": "Equipos industriales con chasis de aluminio y disipación pasiva sin ventiladores, operación 24/7, hasta 6 puertos COM (RS232/485) y opciones con bornera industrial Phoenix 2P.",
+                "image": "https://www.sie.com.ar/images/industrial/fanless-6com-pc.jpg"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Distribución Mayorista de Mini PCs Multi-LAN y Appliances Rack 1U",
+                "serviceType": "Venta mayorista B2B de equipamiento de red",
+                "description": "Equipos compactos fanless con 4 a 6 puertos Gigabit Ethernet y formato Rack 19 pulgadas 1U con 8 puertos GbE más 2 bahías SFP para firewalls (pfSense/OPNsense), routers e ISPs.",
+                "image": "https://www.sie.com.ar/images/industrial/multilan-6port.jpg"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Distribución Mayorista de Módulos OPS para Cartelería Digital",
+                "serviceType": "Venta mayorista B2B de módulos OPS",
+                "description": "Unidades PC enchufables con conector estándar 80-Pin OPS (JAE) para pantallas interactivas, tótems de autogestión y aulas digitales.",
+                "image": "https://www.sie.com.ar/images/industrial/ops-module.jpg"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Motherboards Industriales e Integración a Medida (Barebone o Llave en Mano)",
+                "serviceType": "Integración OEM y venta mayorista de placas embebidas",
+                "description": "Placas madre Thin Mini-ITX, Nano-ITX y NUC e integración en planta Córdoba en modalidad barebone o completa con memoria RAM, SSD industrial y sistema operativo.",
+                "image": "https://www.sie.com.ar/images/industrial/motherboard-itx-clean.jpg"
+              }
+            }
+          ]
         }
       },
       {
@@ -139,86 +185,6 @@
             "position": 2,
             "name": "Computación Industrial Mayorista",
             "item": "https://www.sie.com.ar/computacion-industrial/"
-          }
-        ]
-      },
-      {
-        "@type": "ItemList",
-        "@id": "https://www.sie.com.ar/computacion-industrial/#catalog",
-        "name": "Líneas de Hardware Industrial Mayorista S.I.E",
-        "numberOfItems": 4,
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "Product",
-              "name": "Mini PCs Fanless Industriales",
-              "sku": "SIE-CI-FANLESS",
-              "description": "Equipos industriales con chasis de aluminio y disipación pasiva sin ventiladores, operación 24/7, hasta 6 puertos COM (RS232/485) y opciones con bornera industrial Phoenix 2P.",
-              "image": "https://www.sie.com.ar/images/industrial/fanless-6com-pc.jpg",
-              "brand": { "@type": "Brand", "name": "S.I.E" },
-              "offers": {
-                "@type": "Offer",
-                "availability": "https://schema.org/InStock",
-                "priceCurrency": "ARS",
-                "businessFunction": "http://purl.org/goodrelations/v1#Sell"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "Product",
-              "name": "Mini PCs Multi-LAN y Appliances Rack 1U",
-              "sku": "SIE-CI-MULTILAN",
-              "description": "Equipos compactos fanless con 4 a 6 puertos Gigabit Ethernet y formato Rack 19 pulgadas 1U con 8 puertos GbE más 2 bahías SFP para firewalls (pfSense/OPNsense), routers e ISPs.",
-              "image": "https://www.sie.com.ar/images/industrial/multilan-6port.jpg",
-              "brand": { "@type": "Brand", "name": "S.I.E" },
-              "offers": {
-                "@type": "Offer",
-                "availability": "https://schema.org/InStock",
-                "priceCurrency": "ARS",
-                "businessFunction": "http://purl.org/goodrelations/v1#Sell"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "Product",
-              "name": "Módulos OPS para Pantallas y Cartelería Digital",
-              "sku": "SIE-CI-OPS",
-              "description": "Unidades PC enchufables con conector estándar 80-Pin OPS (JAE) para pantallas interactivas, tótems de autogestión y aulas digitales.",
-              "image": "https://www.sie.com.ar/images/industrial/ops-module.jpg",
-              "brand": { "@type": "Brand", "name": "S.I.E" },
-              "offers": {
-                "@type": "Offer",
-                "availability": "https://schema.org/InStock",
-                "priceCurrency": "ARS",
-                "businessFunction": "http://purl.org/goodrelations/v1#Sell"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "item": {
-              "@type": "Product",
-              "name": "Motherboards Industriales y Configuración a Medida (Barebone o Llave en Mano)",
-              "sku": "SIE-CI-OEM",
-              "description": "Placas madre Thin Mini-ITX, Nano-ITX y NUC e integración en planta Córdoba en modalidad barebone o completa con memoria RAM, SSD industrial y sistema operativo.",
-              "image": "https://www.sie.com.ar/images/industrial/motherboard-itx-clean.jpg",
-              "brand": { "@type": "Brand", "name": "S.I.E" },
-              "offers": {
-                "@type": "Offer",
-                "availability": "https://schema.org/InStock",
-                "priceCurrency": "ARS",
-                "businessFunction": "http://purl.org/goodrelations/v1#Sell"
-              }
-            }
           }
         ]
       },
