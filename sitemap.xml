@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Página Principal / Landing Canónica -->
+  <!-- Página Principal: Manufactura Electrónica -->
   <url>
     <loc>https://www.sie.com.ar/</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.sie.com.ar/images/foto1.jpg</image:loc>
+      <image:title>Línea de montaje superficial SMT en S.I.E Córdoba</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sie.com.ar/images/services/EnsamblajePCB.jpg</image:loc>
+      <image:title>Ensamblaje y montaje de placas PCB SMT y THT</image:title>
+    </image:image>
   </url>
 
   <!-- División Computación Industrial Mayorista -->
@@ -15,14 +24,61 @@
     <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.sie.com.ar/images/industrial/fanless-box-pc.jpg</image:loc>
+      <image:title>Box PC Industrial Fanless 24/7 con múltiples puertos COM</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sie.com.ar/images/industrial/fanless-6com-pc.jpg</image:loc>
+      <image:title>Mini PC Industrial Fanless con 6 puertos COM RS232/485</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sie.com.ar/images/industrial/fanless-phoenix-2lan.jpg</image:loc>
+      <image:title>Mini PC Fanless con bornera industrial Phoenix y doble LAN</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sie.com.ar/images/industrial/multilan-6port.jpg</image:loc>
+      <image:title>Appliance Multi-LAN fanless de 6 puertos Gigabit Ethernet</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sie.com.ar/images/industrial/multilan-rack-1u.jpg</image:loc>
+      <image:title>Servidor de seguridad de red Rack 1U con 8 puertos GbE y 2 bahías SFP</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sie.com.ar/images/industrial/ops-module.jpg</image:loc>
+      <image:title>Módulo PC OPS estándar 80-Pin para pantallas interactivas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sie.com.ar/images/industrial/motherboard-itx-clean.jpg</image:loc>
+      <image:title>Motherboard industrial Thin Mini-ITX con bloque térmico de cobre</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sie.com.ar/images/industrial/embedded-nano-board.jpg</image:loc>
+      <image:title>Placa embebida industrial Nano-ITX / NUC con SO-DIMM y M.2 NVMe</image:title>
+    </image:image>
   </url>
 
-  <!-- Documentación Técnica / Guía de Archivos PCB -->
+  <!-- Documentación de Ingeniería PCB -->
   <url>
     <loc>https://www.sie.com.ar/guia-archivos-pcb.pdf</loc>
     <lastmod>2026-08-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Archivos de contexto para sistemas de IA (AIEO) -->
+  <url>
+    <loc>https://www.sie.com.ar/llms.txt</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sie.com.ar/llms-full.txt</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>

@@ -1,0 +1,78 @@
+# S.I.E — Documentación Completa del Sitio (llms-full.txt)
+
+> Documento estructurado de referencia para sistemas de búsqueda e inteligencia artificial. Reúne la información verificable de las dos divisiones operativas de S.I.E (Servicios para la Industria Electrónica), con planta en Córdoba, Argentina.
+
+## Identidad Corporativa y Contacto
+- Nombre: S.I.E — Servicios para la Industria Electrónica
+- Trayectoria: Más de 25 años en la industria electrónica argentina
+- Dirección de Planta: Mendoza 1422, Barrio Cofico, Ciudad de Córdoba, Provincia de Córdoba, Argentina (CP 5000)
+- Coordenadas: -31.397028, -64.194592
+- Teléfono: +54 (0351) 672-3910
+- WhatsApp Directo: +54 9 351 672-3910 (https://wa.me/5493516723910)
+- Correo Electrónico: info@sie.com.ar
+- Horario: Lunes a Viernes de 08:00 a 17:00 hs (ART)
+- Facturación y Logística: Facturación A en Argentina; envíos asegurados por transporte o expreso a las 24 jurisdicciones del país.
+
+---
+
+## División 1: Manufactura Electrónica (https://www.sie.com.ar/)
+
+### Servicios Disponibles
+| Proceso / Servicio | Capacidades y Alcance | Modalidad de Trabajo | Control y Verificación |
+| :--- | :--- | :--- | :--- |
+| Montaje SMT | Componentes SMD pasivos y activos, circuitos integrados y semiconductores | Prototipos, preseries y series productivas | Control visual de armado |
+| Montaje THT | Inserción y soldadura de componentes pasantes, conectores y bornes | Lotes a medida | Soldadura manual calificada |
+| Sourcing de BOM | Gestión de compras con distribuidores oficiales y búsqueda de equivalentes | Llave en Mano (Full Turnkey) o Consignado | Control según lista de materiales (BOM) |
+| Testing Funcional | Verificación de encendido, tensiones y pruebas bajo protocolo acordado | A coordinar con el cliente | Revisión previa a la entrega |
+| Integración Box-Build | Montaje de placas en gabinetes plásticos o metálicos, cableados, arneses y rotulado | Equipos integrados | Embalaje protegido para traslado |
+| Manufactura 3D | Impresión 3D en PLA, PETG o ABS para carcasas, soportes y validación | Prototipos y piezas a medida | Ajuste dimensional al PCB |
+
+### Alcance de Planta (Aclaración Importante)
+S.I.E se especializa en diseño de hardware, sourcing de partes, montaje SMT/THT, pruebas funcionales e integración final. **S.I.E no realiza la fabricación química de la placa PCB virgen** (placa base o baquelita sin montar).
+
+### Documentación para Solicitar Cotización de Ensamble
+1. Archivos Gerber de la placa (cobre, máscara antisoldante, serigrafía y perforaciones).
+2. Lista de Materiales (BOM) en Excel/CSV con designador, encapsulado y código de fabricante (MPN).
+3. Archivo Pick and Place con coordenadas y orientación de montaje SMD.
+4. Protocolo de pruebas si el proyecto requiere verificación funcional en banco.
+- Referencia PDF: https://www.sie.com.ar/guia-archivos-pcb.pdf
+
+### Preguntas Frecuentes — Manufactura Electrónica
+- **¿Fabrican la placa de circuito impreso (PCB virgen)?** No. Realizamos diseño de hardware, sourcing de componentes, montaje SMT/THT sobre placas provistas o gestionadas, pruebas funcionales e integración en gabinetes.
+- **¿Puedo proveer mis propios componentes o ustedes realizan el sourcing?** Trabajamos bajo ambas modalidades: Llave en mano (gestionamos la compra de la BOM con distribuidores autorizados) o Consignado (el cliente entrega componentes y placas para el montaje).
+- **¿Tienen cantidades mínimas de producción (MOQ)?** No exigimos un mínimo rígido; acompañamos desde prototipos y lotes piloto hasta series de media escala.
+- **¿Realizan envíos al interior del país?** Sí, despachamos a toda Argentina mediante transporte o encomienda con embalaje protegido.
+
+---
+
+## División 2: Computación Industrial Mayorista (https://www.sie.com.ar/computacion-industrial/)
+
+### Enfoque Comercial
+Canal B2B exclusivo para distribuidores, revendedores, integradores IT y fabricantes de equipamiento en Argentina. No se publican precios minoristas; se cotiza por lote según familia, configuración y volumen estimado (10 a 30, 30 a 100, 100 a 200 o más de 200 unidades).
+
+### Comparativa de Líneas de Hardware Industrial
+| Línea / Familia | Puertos Serie y Red | Video y Expansión | Alimentación y Montaje | Modalidad de Entrega en S.I.E | Uso Típico |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 01. Mini PCs Fanless Industriales | Hasta 6× COM (RS232/485), Dual LAN, hasta 6× USB | HDMI, VGA, Mini-PCIe / M.2 (WiFi, 4G/5G) | DC 12V o bornera industrial Phoenix 2 pines; anclaje mural | Barebone o integrado en planta (RAM, SSD, SO) | Industria, automatización, balanzas, comercios y POS 24/7 |
+| 02. Mini PCs Multi-LAN y Rack 1U | 4 a 6× GbE en Box fanless; hasta 8× GbE + 2× bahías SFP + consola RJ45-COM en 1U | HDMI/VGA, SIM slot, Mini-PCIe, soporte Watchdog | DC 12V o fuente ATX 1U; chasis pasivo o Rack 19" 1U | Barebone o preconfigurado con imagen de red | Integradores IT, firewalls (pfSense/OPNsense), routers e ISPs |
+| 03. Módulos OPS y Cartelería Digital | LAN GbE, 4× USB 3.0, COM1 RS232 + TTL interno | HDMI 2.0 + VGA (4K@60Hz vía OPS), M.2 NVMe | Conector estándar 80-Pin OPS; manija y tornillos frontales | Barebone o integrado con Windows IoT / Linux | Pantallas interactivas, tótems de autogestión, aulas y cartelería |
+| 04. Motherboards y Configuración a Medida | Dual LAN, 2 a 6× COM, GPIO, hasta 11× USB | HDMI, VGA, LVDS/eDP; SO-DIMM DDR4/DDR5; M.2 + SATA | DC 12V/19V o 4-Pin ATX; Thin Mini-ITX (170×170mm), Nano-ITX, NUC | Placa suelta OEM, Barebone o equipo llave en mano | Fabricantes OEM de equipamiento, quioscos y proyectos a medida |
+
+### Protocolo de Banco Pre-Despacho en Planta Córdoba (Mendoza 1422)
+Antes de embalar cada lote mayorista, el laboratorio propio de S.I.E realiza:
+1. **BIOS & Energía:** Configuración de Auto Power-On tras corte eléctrico, Wake-on-LAN y Watchdog por hardware (256 niveles, 0–255 s).
+2. **Burn-In Térmico:** Prueba de encendido, puertos críticos (COM, GbE, video) y estabilidad bajo carga.
+3. **Integración & Clonado:** Instalación de módulos RAM SO-DIMM, SSD industrial (M.2 NVMe / mSATA / SATA) e imagen maestra de sistema operativo (Windows IoT, Linux, pfSense u OPNsense).
+4. **Trazabilidad Local:** Registro de número de serie por partida para respuesta directa de garantía en Córdoba.
+
+### Proceso Mayorista en 4 Etapas
+1. **Relevamiento:** Definición de arquitectura (Fanless, Multi-LAN, OPS o placa OEM), puertos, volumen y modalidad.
+2. **Cotización Mayorista:** Propuesta comercial B2B según escala de lote, stock disponible o pedido programado.
+3. **Integración y Verificación en Planta:** Armado de RAM/SSD, seteo de BIOS, clonado de SO y control de estabilidad en Córdoba.
+4. **Despacho Protegido:** Embalaje preparado para transporte seguro y envío coordinado por expreso a cualquier provincia argentina.
+
+### Preguntas Frecuentes — Computación Industrial Mayorista
+- **¿Cuál es la cantidad mínima de compra?** Operamos orientados a lotes mayoristas para distribuidores, revendedores e integradores. Consultanos según modelo, disponibilidad en stock o programación por volumen.
+- **¿Los equipos vienen completos o barebone?** Trabajamos ambas modalidades: retiro de unidades barebone o entrega integrada en planta Córdoba con RAM, SSD y sistema operativo instalados y verificados.
+- **¿Cómo funciona la garantía?** Garantía local en Argentina respaldada directamente por nuestro laboratorio propio en Córdoba, sin intermediarios ni envíos al exterior.
+- **¿Hacen envíos a todo el país?** Sí, despachamos lotes mayoristas a todas las provincias de Argentina mediante transporte o expreso elegido por el distribuidor con embalaje protegido.

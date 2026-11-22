@@ -1,40 +1,31 @@
 # S.I.E - Servicios para la Industria Electrónica
 
-> Empresa con más de 25 años de trayectoria en Córdoba, especializada en montaje y ensamblaje de placas electrónicas (SMT y THT), abastecimiento (sourcing) de componentes, verificación funcional e integración de equipos.
+> Empresa argentina con más de 25 años de trayectoria en la Ciudad de Córdoba. Opera dos divisiones B2B complementarias: Manufactura Electrónica (ensamble SMT/THT, sourcing de componentes, testing e integración Box-Build) y Computación Industrial Mayorista (Mini PCs fanless, equipos Multi-LAN, Rack 1U, módulos OPS y placas embebidas para distribuidores e integradores de todo el país).
 
-## Información de la Empresa
-- **Razón / Nombre Comercial:** S.I.E (Servicios para la Industria Electrónica)
-- **Ubicación:** Mendoza 1422, Barrio Cofico, Ciudad de Córdoba, Córdoba, Argentina (CP X5000)
-- **Teléfono Planta:** +54 (0351) 672-3910
-- **WhatsApp Oficial:** +54 9 351 672-3910 (https://wa.me/5493516723910)
-- **Correo Electrónico:** info@sie.com.ar
-- **Sitio Web Oficial:** https://www.sie.com.ar/
-- **Horario de Atención:** Lunes a Viernes de 08:00 a 17:00 hs (ART)
+## Datos de Entidad y Contacto
+- Razón / Nombre Comercial: S.I.E (Servicios para la Industria Electrónica)
+- Planta y Oficinas: Mendoza 1422, Barrio Cofico, Córdoba, Argentina (CP 5000)
+- Teléfono de Planta: +54 (0351) 672-3910
+- WhatsApp Comercial Directo: +54 9 351 672-3910 (https://wa.me/5493516723910)
+- Correo Electrónico: info@sie.com.ar
+- Horario de Atención: Lunes a Viernes de 08:00 a 17:00 hs (ART, UTC-3)
+- Cobertura Logística: Despachos asegurados a todas las provincias de la República Argentina
 
-## Servicios y Capacidades
-- **Montaje Superficial SMT:** Ensamble de componentes SMD (pasivos, integrados y semiconductores) para prototipos y series de producción.
-- **Inserción y Soldadura THT:** Montaje manual calificado de componentes tradicionales pasantes, conectores y bornes con control visual.
-- **Sourcing de Componentes:** Gestión de compras con distribuidores habituales y búsqueda de alternativas/reemplazos según lista de materiales (BOM).
-- **Testing y Verificación Funcional:** Pruebas eléctricas y verificación de encendido o lógica de acuerdo al protocolo acordado con el cliente.
-- **Integración Box-Build:** Montaje de placas en gabinetes, confección de cableados y embalaje protegido para despacho.
-- **Manufactura 3D para Prototipado:** Impresión 3D en materiales estándar y técnicos (PLA, PETG, ABS) para desarrollo rápido de gabinetes y soportes.
+## Páginas y Recursos Principales
+- [Manufactura Electrónica (Inicio)](https://www.sie.com.ar/): Ensamble SMT/THT, sourcing de BOM, pruebas funcionales, Box-Build e impresión 3D para prototipado.
+- [División Computación Industrial Mayorista](https://www.sie.com.ar/computacion-industrial/): Distribución mayorista B2B de Mini PCs fanless, equipos Multi-LAN y Rack 1U, módulos OPS y motherboards embebidas con integración y garantía en Córdoba.
+- [Guía de Archivos PCB para Clientes (PDF)](https://www.sie.com.ar/guia-archivos-pcb.pdf): Especificación de archivos Gerber, BOM y Pick and Place para cotizar ensamble.
+- [Documentación Completa para IA (llms-full.txt)](https://www.sie.com.ar/llms-full.txt): Catálogo detallado de capacidades, tabla comparativa de hardware industrial y preguntas frecuentes de ambas divisiones.
 
-## Alcance Técnico
-- **Nota Importante:** S.I.E realiza el diseño de hardware, sourcing de partes, montaje de componentes y pruebas. NO realiza la fabricación química de la placa PCB virgen (placa base o baquelita sin montar).
+## División 1: Manufactura Electrónica (https://www.sie.com.ar/)
+- Servicios: Sourcing de componentes según BOM (Llave en Mano o Consignado), montaje superficial SMT, inserción y soldadura manual calificada THT, pruebas funcionales de encendido bajo protocolo, integración final en gabinetes (Box-Build) y manufactura 3D (PLA, PETG, ABS).
+- Alcance de Planta: S.I.E realiza diseño de hardware, compras, montaje y pruebas. No fabrica químicamente el PCB virgen sin montar.
+- Documentación requerida: Archivos Gerber, BOM con Designador/Encapsulado/MPN y archivo Pick and Place.
 
-## Documentación para Cotizar
-- Archivos Gerber de la placa.
-- Lista de Materiales (BOM) con Designador, Valor, Encapsulado y Código de Fabricante (MPN).
-- Archivo Pick and Place.
-- Pautas o protocolo de pruebas funcionales (si requiere verificación).
-
-## Enlaces Relevantes
-- [Sitio Web](https://www.sie.com.ar/)
-- [División Computación Industrial (Venta Mayorista de Mini PCs Industriales)](https://www.sie.com.ar/computacion-industrial/)
-- [Guía de Archivos PCB para Clientes (PDF)](https://www.sie.com.ar/guia-archivos-pcb.pdf)
-
-## División Computación Industrial (B2B Mayorista)
-- **URL:** https://www.sie.com.ar/computacion-industrial/
-- **Público:** Distribuidores, revendedores e integradores de toda Argentina.
-- **Líneas de producto:** Mini PCs Fanless Industriales (24/7, puertos RS232/485), Mini PCs Multi-LAN (4 a 6 puertos Gigabit para redes/firewalls), Módulos OPS y Cartelería Digital, y Configuración a Medida (Barebone o Llave en Mano integrada en Córdoba con RAM, SSD industrial y SO).
-- **Respaldo:** Laboratorio propio en Córdoba para garantía local, control de calidad previo al despacho y envíos asegurados a todo el país.
+## División 2: Computación Industrial Mayorista (https://www.sie.com.ar/computacion-industrial/)
+- Público: Distribuidores, revendedores, integradores IT y fabricantes de equipamiento en Argentina.
+- Línea 01 — Mini PCs Fanless Industriales: Chasis de aluminio con disipación pasiva 24/7, hasta 6 puertos COM (RS232/485), bornera industrial Phoenix 2P o DC 12V, variantes compactas para POS, balanzas y automatización.
+- Línea 02 — Mini PCs Multi-LAN y Rack 1U: Equipos fanless con 4 a 6 puertos Gigabit Ethernet y formato Rack 19" 1U con 8 puertos GbE + 2 bahías fibra SFP + consola RJ45-COM, orientados a firewalls (pfSense/OPNsense), routers e ISPs.
+- Línea 03 — Módulos OPS y Cartelería Digital: Unidades PC enchufables con conector estándar 80-Pin OPS para pantallas interactivas, tótems y aulas digitales.
+- Línea 04 — Placas Embebidas y Configuración a Medida: Motherboards Thin Mini-ITX, Nano-ITX y NUC (DDR4/DDR5, LVDS/eDP, GPIO) y entrega en modalidad Barebone o integrada en planta Córdoba (RAM, SSD industrial, clonado de imagen de SO, BIOS Auto Power-On, Wake-on-LAN y Watchdog 0–255 s).
+- Garantía: Local en Argentina, respaldada directamente por el laboratorio propio de S.I.E en Córdoba.
