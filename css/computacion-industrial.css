@@ -1,0 +1,1544 @@
+/* ==========================================================================
+   S.I.E - División Computación Industrial (B2B Mayorista)
+   Dirección Visual: Editorial Industrial Suiza
+   Tokens verde-grafito anodizado, fotografía de hardware sin marca y hairlines 1px
+   ========================================================================== */
+
+body.page-industrial {
+  --ci-bg-topbar: #090d0b;
+  --ci-bg-base: #0d1210;
+  --ci-bg-elevated: #121815;
+  --ci-bg-panel: #171f1b;
+  --ci-border: #25302a;
+  --ci-border-strong: #36473d;
+
+  --ci-text-primary: #eef2ef;
+  --ci-text-secondary: #a8b5ad;
+  --ci-text-meta: #85968c;
+
+  --ci-brand: #187b1f;
+  --ci-brand-hover: #136619;
+  --ci-brand-text: #4cc357;
+  --ci-btn-text: #f4f8f5;
+
+  --ci-wa: #25d366;
+  --ci-wa-hover: #1eb956;
+  --ci-wa-ink: #090d0b;
+
+  --ci-error-bg: #241414;
+  --ci-error-border: #7f2d2d;
+  --ci-error-text: #f3b5b5;
+
+  --ci-radius-xs: 2px;
+  --ci-radius-sm: 4px;
+
+  --ci-font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ci-font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --ci-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  font-family: var(--ci-font-sans);
+  background-color: var(--ci-bg-base);
+  color: var(--ci-text-primary);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   1. ANULACIONES DE CHROME COMPARTIDO (TOPBAR, HEADER, FOOTER, PROGRESS)
+   ────────────────────────────────────────────────────────────────────────── */
+body.page-industrial .topbar {
+  background-color: var(--ci-bg-topbar);
+  border-bottom-color: var(--ci-border);
+  color: var(--ci-text-secondary);
+}
+
+body.page-industrial .topbar-info {
+  font-variant-numeric: tabular-nums;
+}
+
+body.page-industrial .topbar-share {
+  border-color: var(--ci-border);
+  border-radius: var(--ci-radius-sm);
+  color: var(--ci-text-secondary);
+}
+
+body.page-industrial .topbar-share:hover {
+  color: var(--ci-text-primary);
+  border-color: var(--ci-border-strong);
+  background-color: var(--ci-bg-panel);
+}
+
+body.page-industrial .topbar-actions a {
+  background-color: var(--ci-wa);
+  border-color: var(--ci-wa-hover);
+  color: var(--ci-wa-ink);
+  border-radius: var(--ci-radius-sm);
+}
+
+body.page-industrial .topbar-actions a:hover {
+  background-color: var(--ci-wa-hover);
+}
+
+body.page-industrial .main-header {
+  background-color: rgba(13, 18, 16, 0.97);
+  border-bottom: 1px solid var(--ci-border);
+}
+
+body.page-industrial .scroll-progress-bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--ci-brand);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.08s linear;
+}
+
+body.page-industrial .main-nav a {
+  color: var(--ci-text-secondary);
+}
+
+body.page-industrial .main-nav a:hover {
+  color: var(--ci-text-primary);
+}
+
+body.page-industrial .nav-back-home {
+  font-family: var(--ci-font-mono);
+  font-size: 0.78rem !important;
+  letter-spacing: 0.02em;
+  color: var(--ci-text-meta) !important;
+  border-right: 1px solid var(--ci-border);
+  padding-right: 1.05rem;
+}
+
+body.page-industrial .nav-back-home:hover {
+  color: var(--ci-text-primary) !important;
+}
+
+body.page-industrial .btn-cotizar-nav {
+  background-color: var(--ci-brand) !important;
+  color: var(--ci-btn-text) !important;
+  border-radius: var(--ci-radius-sm) !important;
+}
+
+body.page-industrial .btn-cotizar-nav:hover {
+  background-color: var(--ci-brand-hover) !important;
+}
+
+body.page-industrial .mobile-toggle {
+  background-color: var(--ci-bg-elevated);
+  border-color: var(--ci-border);
+  border-radius: var(--ci-radius-sm);
+}
+
+body.page-industrial .hamburger-bar {
+  background-color: var(--ci-text-primary);
+}
+
+body.page-industrial .footer {
+  background-color: var(--ci-bg-topbar);
+  border-top: 1px solid var(--ci-border);
+  color: var(--ci-text-secondary);
+}
+
+body.page-industrial .footer-grid h4 {
+  font-family: var(--ci-font-mono);
+  font-size: 0.75rem;
+  color: var(--ci-text-primary);
+}
+
+body.page-industrial .footer-grid a {
+  color: var(--ci-text-secondary);
+}
+
+body.page-industrial .footer-grid a:hover {
+  color: var(--ci-text-primary);
+}
+
+body.page-industrial .footer-share-btn {
+  background-color: var(--ci-bg-elevated);
+  border-color: var(--ci-border);
+  color: var(--ci-text-secondary);
+  border-radius: var(--ci-radius-sm);
+}
+
+body.page-industrial .footer-share-btn:hover {
+  background-color: var(--ci-bg-panel);
+  border-color: var(--ci-border-strong);
+  color: var(--ci-text-primary);
+}
+
+body.page-industrial .footer-copyright {
+  border-top-color: var(--ci-border);
+  color: var(--ci-text-meta);
+}
+
+body.page-industrial .floating-wa {
+  background-color: var(--ci-wa);
+  border-color: var(--ci-wa-hover);
+  color: var(--ci-wa-ink);
+  border-radius: var(--ci-radius-sm);
+  box-shadow: none;
+}
+
+body.page-industrial .floating-wa:hover {
+  background-color: var(--ci-wa-hover);
+}
+
+body.page-industrial .share-toast {
+  background-color: var(--ci-bg-panel);
+  color: var(--ci-text-primary);
+  border-color: var(--ci-border-strong);
+  border-radius: var(--ci-radius-sm);
+  box-shadow: none;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   2. UTILIDADES TIPOGRÁFICAS & HEADERS DE SECCIÓN (ALINEACIÓN EDITORIAL)
+   ────────────────────────────────────────────────────────────────────────── */
+.ci-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--ci-font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ci-text-meta);
+  margin-bottom: 1.15rem;
+}
+
+.ci-eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: var(--ci-brand);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+.ci-section-head {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 2.5rem;
+  align-items: end;
+  margin-bottom: 2.75rem;
+}
+
+.ci-section-head h2 {
+  font-size: clamp(1.65rem, 2.6vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--ci-text-primary);
+}
+
+.ci-section-head-copy {
+  font-size: 1.02rem;
+  color: var(--ci-text-secondary);
+  line-height: 1.65;
+  max-width: 65ch;
+}
+
+.ci-mono-num {
+  font-family: var(--ci-font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   3. HERO ASIMÉTRICO + EXPLORADOR MULTI-FAMILIA EN VIVO
+   ────────────────────────────────────────────────────────────────────────── */
+.ci-hero {
+  background-color: var(--ci-bg-base);
+  border-bottom: 1px solid var(--ci-border);
+  padding: 4.5rem 0 4.25rem;
+}
+
+.ci-hero-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.ci-hero-copy h1 {
+  font-size: clamp(2.25rem, 4.1vw, 3.35rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: var(--ci-text-primary);
+  margin-bottom: 1.25rem;
+  max-width: 18ch;
+}
+
+.ci-hero-lead {
+  font-size: 1.04rem;
+  color: var(--ci-text-secondary);
+  line-height: 1.65;
+  max-width: 60ch;
+  margin-bottom: 1.85rem;
+}
+
+/* Tira de 4 familias en Hero izquierdo */
+.ci-hero-arch-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background-color: var(--ci-border);
+  border: 1px solid var(--ci-border);
+  border-radius: var(--ci-radius-xs);
+  margin-bottom: 2rem;
+}
+
+.ci-hero-arch-item {
+  background-color: var(--ci-bg-elevated);
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.18s var(--ci-ease);
+}
+
+.ci-hero-arch-item:hover {
+  background-color: var(--ci-bg-panel);
+}
+
+.ci-arch-num {
+  font-family: var(--ci-font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--ci-brand-text);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.14rem;
+  flex-shrink: 0;
+}
+
+.ci-arch-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.ci-arch-txt strong {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ci-text-primary);
+  line-height: 1.25;
+}
+
+.ci-arch-txt span {
+  font-family: var(--ci-font-mono);
+  font-size: 0.72rem;
+  color: var(--ci-text-meta);
+  line-height: 1.35;
+}
+
+.ci-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.95rem;
+  align-items: center;
+}
+
+.ci-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.7rem;
+  background-color: var(--ci-brand);
+  border: 1px solid var(--ci-brand);
+  color: var(--ci-btn-text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--ci-radius-sm);
+  cursor: pointer;
+  transition: background-color 0.18s var(--ci-ease), transform 0.18s var(--ci-ease);
+}
+
+.ci-btn-primary:hover {
+  background-color: var(--ci-brand-hover);
+  border-color: var(--ci-brand-hover);
+  transform: translateY(-1px);
+}
+
+.ci-btn-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.55rem;
+  background-color: transparent;
+  border: 1px solid var(--ci-wa);
+  color: var(--ci-wa);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--ci-radius-sm);
+  cursor: pointer;
+  transition: background-color 0.18s var(--ci-ease), color 0.18s var(--ci-ease), transform 0.18s var(--ci-ease);
+}
+
+.ci-btn-wa:hover {
+  background-color: var(--ci-wa);
+  color: var(--ci-wa-ink);
+  transform: translateY(-1px);
+}
+
+/* Columna derecha: Muestrario Multi-Familia */
+.ci-showcase {
+  background-color: var(--ci-bg-elevated);
+  border: 1px solid var(--ci-border-strong);
+  border-radius: var(--ci-radius-xs);
+  overflow: hidden;
+}
+
+.ci-showcase-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.1rem;
+  background-color: var(--ci-bg-panel);
+  border-bottom: 1px solid var(--ci-border-strong);
+  font-family: var(--ci-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ci-text-meta);
+}
+
+.ci-datasheet-code {
+  color: var(--ci-brand-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.ci-showcase-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background-color: var(--ci-border);
+  border-bottom: 1px solid var(--ci-border-strong);
+}
+
+.ci-showcase-tab {
+  background-color: var(--ci-bg-base);
+  border: none;
+  padding: 0.7rem 0.5rem;
+  font-family: var(--ci-font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--ci-text-meta);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.16s var(--ci-ease), color 0.16s var(--ci-ease);
+  font-variant-numeric: tabular-nums;
+}
+
+.ci-showcase-tab:hover {
+  background-color: var(--ci-bg-panel);
+  color: var(--ci-text-primary);
+}
+
+.ci-showcase-tab.is-active {
+  background-color: var(--ci-bg-panel);
+  color: var(--ci-brand-text);
+}
+
+.ci-showcase-stage {
+  position: relative;
+  aspect-ratio: 900 / 640;
+  background-color: var(--ci-bg-base);
+  overflow: hidden;
+  border-bottom: 1px solid var(--ci-border);
+}
+
+.ci-showcase-stage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ci-showcase-overlay-meta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.6rem 1rem;
+  background-color: rgba(9, 13, 11, 0.86);
+  border-top: 1px solid var(--ci-border);
+  font-family: var(--ci-font-mono);
+  font-size: 0.72rem;
+  color: var(--ci-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.ci-showcase-specbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.1rem;
+  background-color: var(--ci-bg-elevated);
+  border-bottom: 1px solid var(--ci-border);
+  font-size: 0.8rem;
+  color: var(--ci-text-secondary);
+}
+
+.ci-showcase-specbar a {
+  font-family: var(--ci-font-mono);
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--ci-brand-text);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ci-showcase-specbar a:hover {
+  color: var(--ci-text-primary);
+  text-decoration: underline;
+}
+
+/* Tira de 4 miniaturas visibles en simultáneo */
+.ci-showcase-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background-color: var(--ci-border);
+  border-bottom: 1px solid var(--ci-border-strong);
+}
+
+.ci-showcase-thumb {
+  background-color: var(--ci-bg-base);
+  border: none;
+  padding: 0.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.68;
+  transition: opacity 0.16s var(--ci-ease), background-color 0.16s var(--ci-ease);
+}
+
+.ci-showcase-thumb:hover {
+  opacity: 0.92;
+  background-color: var(--ci-bg-panel);
+}
+
+.ci-showcase-thumb.is-active {
+  opacity: 1;
+  background-color: var(--ci-bg-panel);
+}
+
+.ci-showcase-thumb img {
+  width: 100%;
+  aspect-ratio: 900 / 640;
+  object-fit: cover;
+  border: 1px solid var(--ci-border);
+  border-radius: var(--ci-radius-xs);
+}
+
+.ci-showcase-thumb.is-active img {
+  border-color: var(--ci-brand);
+}
+
+.ci-showcase-thumb span {
+  font-family: var(--ci-font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.06em;
+  color: var(--ci-text-meta);
+  font-variant-numeric: tabular-nums;
+}
+
+.ci-showcase-thumb.is-active span {
+  color: var(--ci-text-primary);
+}
+
+/* Condiciones operativas compactas debajo del visor */
+.ci-datasheet-compact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background-color: var(--ci-border);
+}
+
+.ci-datasheet-compact-item {
+  background-color: var(--ci-bg-base);
+  padding: 0.7rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ci-datasheet-compact-item dt {
+  font-family: var(--ci-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  color: var(--ci-text-meta);
+}
+
+.ci-datasheet-compact-item dd {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ci-text-primary);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.35;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   4. LÍNEAS DE PRODUCTO (GRILLA HAIRLINE 1PX + FOTOS REALES + VARIANTES)
+   ────────────────────────────────────────────────────────────────────────── */
+.ci-catalog-section {
+  background-color: var(--ci-bg-base);
+  border-bottom: 1px solid var(--ci-border);
+  padding: 5rem 0;
+}
+
+.ci-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background-color: var(--ci-border);
+  border: 1px solid var(--ci-border);
+  border-radius: var(--ci-radius-xs);
+}
+
+.ci-catalog-item {
+  background-color: var(--ci-bg-base);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  transition: background-color 0.2s var(--ci-ease);
+}
+
+.ci-catalog-item:hover {
+  background-color: var(--ci-bg-elevated);
+}
+
+.ci-catalog-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ci-catalog-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.ci-catalog-index {
+  font-family: var(--ci-font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ci-brand-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.ci-catalog-code {
+  font-family: var(--ci-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ci-text-meta);
+}
+
+/* Bloque visual fotográfico de cada línea */
+.ci-catalog-figure {
+  border: 1px solid var(--ci-border-strong);
+  border-radius: var(--ci-radius-xs);
+  background-color: var(--ci-bg-elevated);
+  overflow: hidden;
+}
+
+.ci-catalog-img-wrap {
+  aspect-ratio: 900 / 640;
+  background-color: var(--ci-bg-base);
+  overflow: hidden;
+}
+
+.ci-catalog-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ci-port-tag {
+  padding: 0.55rem 0.9rem;
+  border-top: 1px solid var(--ci-border);
+  border-bottom: 1px solid var(--ci-border);
+  background-color: var(--ci-bg-panel);
+  font-family: var(--ci-font-mono);
+  font-size: 0.72rem;
+  color: var(--ci-text-primary);
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+}
+
+.ci-variant-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0.65rem 0.9rem;
+  background-color: var(--ci-bg-base);
+}
+
+.ci-variant-btn {
+  padding: 0.35rem 0.7rem;
+  background-color: var(--ci-bg-elevated);
+  border: 1px solid var(--ci-border);
+  border-radius: var(--ci-radius-xs);
+  color: var(--ci-text-secondary);
+  font-family: var(--ci-font-mono);
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: border-color 0.15s var(--ci-ease), color 0.15s var(--ci-ease), background-color 0.15s var(--ci-ease);
+}
+
+.ci-variant-btn:hover {
+  border-color: var(--ci-border-strong);
+  color: var(--ci-text-primary);
+}
+
+.ci-variant-btn.is-active {
+  background-color: var(--ci-bg-panel);
+  border-color: var(--ci-brand);
+  color: var(--ci-brand-text);
+}
+
+.ci-catalog-item h3 {
+  font-size: 1.28rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--ci-text-primary);
+}
+
+.ci-catalog-item p {
+  font-size: 0.95rem;
+  color: var(--ci-text-secondary);
+  line-height: 1.65;
+  max-width: 58ch;
+}
+
+.ci-catalog-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.ci-catalog-specs {
+  list-style: none;
+  border-top: 1px solid var(--ci-border);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ci-catalog-specs li {
+  display: grid;
+  grid-template-columns: 7.25rem 1fr;
+  gap: 0.75rem;
+  font-size: 0.86rem;
+  color: var(--ci-text-secondary);
+  line-height: 1.45;
+}
+
+.ci-catalog-specs li span:first-child {
+  font-family: var(--ci-font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ci-text-meta);
+  padding-top: 0.1rem;
+}
+
+.ci-catalog-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--ci-font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ci-brand-text);
+  width: fit-content;
+  cursor: pointer;
+  transition: transform 0.18s var(--ci-ease), color 0.18s var(--ci-ease);
+}
+
+.ci-catalog-action:hover {
+  color: var(--ci-text-primary);
+  transform: translateX(3px);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   5. POR QUÉ OPERAR CON S.I.E (EDITORIAL 2 COLUMNAS + PROTOCOLO DE BANCO)
+   ────────────────────────────────────────────────────────────────────────── */
+.ci-reasons-section {
+  background-color: var(--ci-bg-elevated);
+  border-bottom: 1px solid var(--ci-border);
+  padding: 5.75rem 0;
+}
+
+.ci-reasons-layout {
+  display: grid;
+  grid-template-columns: 0.88fr 1.12fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.ci-reasons-sticky {
+  position: sticky;
+  top: 6rem;
+}
+
+.ci-reasons-sticky h2 {
+  font-size: clamp(1.65rem, 2.6vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--ci-text-primary);
+  margin-bottom: 1rem;
+}
+
+.ci-reasons-sticky > p {
+  font-size: 1rem;
+  color: var(--ci-text-secondary);
+  line-height: 1.65;
+  max-width: 44ch;
+  margin-bottom: 1.75rem;
+}
+
+/* Ficha de Protocolo de Banco en Planta Córdoba */
+.ci-lab-protocol {
+  border: 1px solid var(--ci-border-strong);
+  background-color: var(--ci-bg-base);
+  border-radius: var(--ci-radius-xs);
+}
+
+.ci-lab-protocol-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  background-color: var(--ci-bg-panel);
+  border-bottom: 1px solid var(--ci-border-strong);
+  font-family: var(--ci-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--ci-text-meta);
+}
+
+.ci-lab-protocol-head span:last-child {
+  color: var(--ci-brand-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.ci-lab-protocol-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ci-lab-protocol-list > div {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--ci-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ci-lab-protocol-list > div:last-child {
+  border-bottom: none;
+}
+
+.ci-lab-protocol-list dt {
+  font-family: var(--ci-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.07em;
+  color: var(--ci-text-primary);
+}
+
+.ci-lab-protocol-list dd {
+  font-size: 0.86rem;
+  color: var(--ci-text-secondary);
+  line-height: 1.5;
+}
+
+.ci-reasons-list {
+  list-style: none;
+  border-top: 1px solid var(--ci-border-strong);
+}
+
+.ci-reason-row {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--ci-border);
+  align-items: start;
+}
+
+.ci-reason-num {
+  font-family: var(--ci-font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ci-brand-text);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.2rem;
+}
+
+.ci-reason-content h3 {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--ci-text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.ci-reason-content p {
+  font-size: 0.96rem;
+  color: var(--ci-text-secondary);
+  line-height: 1.65;
+  max-width: 62ch;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   6. PROCESO MAYORISTA (RIEL COMPACTO DE 4 ETAPAS)
+   ────────────────────────────────────────────────────────────────────────── */
+.ci-process-section {
+  background-color: var(--ci-bg-base);
+  border-bottom: 1px solid var(--ci-border);
+  padding: 3.75rem 0;
+}
+
+.ci-process-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.ci-process-header h2 {
+  font-size: clamp(1.5rem, 2.2vw, 1.95rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ci-text-primary);
+}
+
+.ci-process-sub {
+  font-family: var(--ci-font-mono);
+  font-size: 0.78rem;
+  color: var(--ci-text-meta);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ci-process-steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--ci-border-strong);
+}
+
+.ci-process-step {
+  position: relative;
+  padding: 1.75rem 1.5rem 0.5rem 0;
+}
+
+.ci-process-step::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  background-color: var(--ci-brand);
+  border-radius: 1px;
+}
+
+.ci-step-code {
+  display: block;
+  font-family: var(--ci-font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ci-brand-text);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.6rem;
+}
+
+.ci-process-step h3 {
+  font-size: 1.04rem;
+  font-weight: 700;
+  color: var(--ci-text-primary);
+  margin-bottom: 0.45rem;
+  line-height: 1.3;
+}
+
+.ci-process-step p {
+  font-size: 0.9rem;
+  color: var(--ci-text-secondary);
+  line-height: 1.55;
+  max-width: 30ch;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   7. PREGUNTAS FRECUENTES (ACORDEÓN HAIRLINE SIN CARDS)
+   ────────────────────────────────────────────────────────────────────────── */
+.ci-faq-section {
+  background-color: var(--ci-bg-elevated);
+  border-bottom: 1px solid var(--ci-border);
+  padding: 5.25rem 0;
+}
+
+.ci-faq-layout {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.ci-faq-aside h2 {
+  font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--ci-text-primary);
+  margin-bottom: 0.85rem;
+}
+
+.ci-faq-aside p {
+  font-size: 0.98rem;
+  color: var(--ci-text-secondary);
+  line-height: 1.65;
+  max-width: 38ch;
+}
+
+.ci-faq-list {
+  border-top: 1px solid var(--ci-border-strong);
+}
+
+.ci-faq-item {
+  border-bottom: 1px solid var(--ci-border);
+}
+
+.ci-faq-question {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.4rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ci-text-primary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.ci-faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.ci-faq-question:hover {
+  color: var(--ci-btn-text);
+}
+
+.ci-faq-icon {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.ci-faq-icon::before,
+.ci-faq-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--ci-brand-text);
+  transform: translate(-50%, -50%);
+  transition: transform 0.22s var(--ci-ease), opacity 0.22s var(--ci-ease);
+}
+
+.ci-faq-icon::before {
+  width: 14px;
+  height: 1.5px;
+}
+
+.ci-faq-icon::after {
+  width: 1.5px;
+  height: 14px;
+}
+
+.ci-faq-item[open] .ci-faq-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  opacity: 0;
+}
+
+.ci-faq-answer {
+  padding: 0 2rem 1.5rem 0;
+  font-size: 0.95rem;
+  color: var(--ci-text-secondary);
+  line-height: 1.68;
+  max-width: 65ch;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   8. FORMULARIO MAYORISTA & ATENCIÓN DIRECTA
+   ────────────────────────────────────────────────────────────────────────── */
+.ci-quote-section {
+  background-color: var(--ci-bg-base);
+  padding: 5.5rem 0 6rem;
+}
+
+.ci-quote-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 0.75fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.ci-form-panel {
+  background-color: var(--ci-bg-elevated);
+  border: 1px solid var(--ci-border-strong);
+  border-radius: var(--ci-radius-xs);
+  padding: 2.25rem;
+}
+
+.ci-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.ci-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.ci-field-full {
+  grid-column: 1 / -1;
+}
+
+.ci-field label,
+.ci-field-group-label {
+  font-family: var(--ci-font-mono);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ci-text-secondary);
+}
+
+.ci-field input,
+.ci-field select,
+.ci-field textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: var(--ci-bg-base);
+  border: 1px solid var(--ci-border-strong);
+  border-radius: var(--ci-radius-sm);
+  color: var(--ci-text-primary);
+  font-family: var(--ci-font-sans);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  transition: border-color 0.15s var(--ci-ease);
+}
+
+.ci-field select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a8b5ad' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 16px 16px;
+  cursor: pointer;
+}
+
+.ci-field input::placeholder,
+.ci-field textarea::placeholder {
+  color: var(--ci-text-meta);
+}
+
+.ci-field input:focus,
+.ci-field select:focus,
+.ci-field textarea:focus {
+  outline: none;
+  border-color: var(--ci-brand);
+}
+
+.ci-field textarea {
+  resize: vertical;
+  min-height: 112px;
+}
+
+.ci-tech-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.ci-check-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 0.85rem;
+  background-color: var(--ci-bg-base);
+  border: 1px solid var(--ci-border);
+  border-radius: var(--ci-radius-sm);
+  cursor: pointer;
+  font-family: var(--ci-font-sans) !important;
+  font-size: 0.86rem !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  color: var(--ci-text-secondary) !important;
+  transition: border-color 0.15s var(--ci-ease), color 0.15s var(--ci-ease);
+}
+
+.ci-check-label:hover {
+  border-color: var(--ci-border-strong);
+  color: var(--ci-text-primary) !important;
+}
+
+.ci-check-label input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--ci-brand);
+  cursor: pointer;
+}
+
+.ci-form-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.ci-form-btn-row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 0.85rem;
+}
+
+.ci-btn-submit {
+  width: 100%;
+  padding: 1rem 1.35rem;
+  background-color: var(--ci-brand);
+  border: 1px solid var(--ci-brand);
+  color: var(--ci-btn-text);
+  font-size: 0.96rem;
+  font-weight: 600;
+  border-radius: var(--ci-radius-sm);
+  cursor: pointer;
+  transition: background-color 0.18s var(--ci-ease), transform 0.18s var(--ci-ease);
+}
+
+.ci-btn-submit:hover {
+  background-color: var(--ci-brand-hover);
+  transform: translateY(-1px);
+}
+
+.ci-btn-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ci-btn-wa-form {
+  width: 100%;
+  padding: 1rem 1.15rem;
+  background-color: var(--ci-bg-base);
+  border: 1px solid var(--ci-wa);
+  color: var(--ci-wa);
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: var(--ci-radius-sm);
+  cursor: pointer;
+  transition: background-color 0.18s var(--ci-ease), color 0.18s var(--ci-ease), transform 0.18s var(--ci-ease);
+}
+
+.ci-btn-wa-form:hover {
+  background-color: var(--ci-wa);
+  color: var(--ci-wa-ink);
+  transform: translateY(-1px);
+}
+
+.ci-form-error {
+  padding: 0.85rem 1rem;
+  background-color: var(--ci-error-bg);
+  border: 1px solid var(--ci-error-border);
+  border-radius: var(--ci-radius-sm);
+  color: var(--ci-error-text);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.ci-form-success {
+  padding: 1.5rem 0.5rem;
+}
+
+.ci-form-success h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ci-text-primary);
+  margin-bottom: 0.6rem;
+}
+
+.ci-form-success p {
+  font-size: 0.96rem;
+  color: var(--ci-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 52ch;
+}
+
+.ci-btn-reset {
+  padding: 0.7rem 1.35rem;
+  background-color: transparent;
+  border: 1px solid var(--ci-border-strong);
+  color: var(--ci-text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--ci-radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s var(--ci-ease), background-color 0.15s var(--ci-ease);
+}
+
+.ci-btn-reset:hover {
+  border-color: var(--ci-brand);
+  background-color: var(--ci-bg-panel);
+}
+
+/* Panel Atención Directa */
+.ci-direct-panel {
+  background-color: var(--ci-bg-elevated);
+  border: 1px solid var(--ci-border-strong);
+  border-radius: var(--ci-radius-xs);
+  padding: 2rem;
+}
+
+.ci-direct-panel h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ci-text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.ci-direct-intro {
+  font-size: 0.92rem;
+  color: var(--ci-text-secondary);
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+}
+
+.ci-direct-list {
+  border-top: 1px solid var(--ci-border);
+  margin-bottom: 1.75rem;
+}
+
+.ci-direct-row {
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--ci-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.ci-direct-row dt {
+  font-family: var(--ci-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ci-text-meta);
+}
+
+.ci-direct-row dd {
+  font-size: 0.95rem;
+  color: var(--ci-text-primary);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.45;
+}
+
+.ci-direct-row dd a:hover {
+  color: var(--ci-brand-text);
+  text-decoration: underline;
+}
+
+.ci-direct-wa-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.95rem 1.25rem;
+  background-color: var(--ci-wa);
+  border: 1px solid var(--ci-wa-hover);
+  color: var(--ci-wa-ink);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: var(--ci-radius-sm);
+  cursor: pointer;
+  transition: background-color 0.18s var(--ci-ease), transform 0.18s var(--ci-ease);
+}
+
+.ci-direct-wa-btn:hover {
+  background-color: var(--ci-wa-hover);
+  transform: translateY(-1px);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   9. RESPONSIVE BREAKPOINTS
+   ────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1180px) {
+  body.page-industrial .main-header {
+    position: sticky;
+  }
+
+  body.page-industrial .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--ci-bg-base);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 1px solid var(--ci-border-strong);
+    box-shadow: none;
+  }
+
+  body.page-industrial .main-nav a {
+    border-bottom-color: var(--ci-border);
+  }
+
+  body.page-industrial .nav-back-home {
+    border-right: none;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ci-hero-grid,
+  .ci-reasons-layout,
+  .ci-faq-layout,
+  .ci-quote-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .ci-section-head {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .ci-reasons-sticky {
+    position: static;
+  }
+}
+
+@media (max-width: 900px) {
+  .ci-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ci-process-steps {
+    grid-template-columns: 1fr;
+    border-top: none;
+    border-left: 1px solid var(--ci-border-strong);
+    padding-left: 1.5rem;
+    gap: 1.75rem;
+  }
+
+  .ci-process-step {
+    padding: 0;
+  }
+
+  .ci-process-step::before {
+    top: 0.35rem;
+    left: -1.78rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ci-hero {
+    padding: 3.5rem 0 3.25rem;
+  }
+
+  .ci-catalog-section,
+  .ci-reasons-section,
+  .ci-faq-section,
+  .ci-quote-section {
+    padding: 3.5rem 0;
+  }
+
+  .ci-form-grid,
+  .ci-form-btn-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ci-form-panel,
+  .ci-direct-panel,
+  .ci-catalog-item {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ci-hero-arch-strip,
+  .ci-datasheet-compact,
+  .ci-showcase-tabs {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ci-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ci-btn-primary,
+  .ci-btn-wa {
+    width: 100%;
+  }
+
+  .ci-showcase-specbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ci-catalog-specs li {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .ci-reason-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   10. PREFERS REDUCED MOTION
+   ────────────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

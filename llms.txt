@@ -30,4 +30,11 @@
 
 ## Enlaces Relevantes
 - [Sitio Web](https://www.sie.com.ar/)
+- [División Computación Industrial (Venta Mayorista de Mini PCs Industriales)](https://www.sie.com.ar/computacion-industrial/)
 - [Guía de Archivos PCB para Clientes (PDF)](https://www.sie.com.ar/guia-archivos-pcb.pdf)
+
+## División Computación Industrial (B2B Mayorista)
+- **URL:** https://www.sie.com.ar/computacion-industrial/
+- **Público:** Distribuidores, revendedores e integradores de toda Argentina.
+- **Líneas de producto:** Mini PCs Fanless Industriales (24/7, puertos RS232/485), Mini PCs Multi-LAN (4 a 6 puertos Gigabit para redes/firewalls), Módulos OPS y Cartelería Digital, y Configuración a Medida (Barebone o Llave en Mano integrada en Córdoba con RAM, SSD industrial y SO).
+- **Respaldo:** Laboratorio propio en Córdoba para garantía local, control de calidad previo al despacho y envíos asegurados a todo el país.

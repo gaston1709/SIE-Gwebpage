@@ -37,11 +37,17 @@ function initReadingProgressBar() {
     const bar = document.getElementById('scroll-progress-bar');
     if (!bar) return;
 
+    const useScaleTransform = document.body.classList.contains('page-industrial');
+
     window.addEventListener('scroll', () => {
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-        bar.style.width = `${progress}%`;
+        if (useScaleTransform) {
+            bar.style.transform = `scaleX(${Math.min(Math.max(progress / 100, 0), 1)})`;
+        } else {
+            bar.style.width = `${progress}%`;
+        }
     }, { passive: true });
 }
 
@@ -101,58 +107,231 @@ function initContactForm() {
     const formulario = document.getElementById("formulario");
     const mensajeExito = document.getElementById("mensaje-exito");
     const reenviarBtn = document.getElementById("reenviar-btn");
+    const fallbackLink = document.getElementById("wa-fallback-link");
 
     if (!formulario || !mensajeExito || !reenviarBtn) return;
 
     formulario.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        const submitBtn = formulario.querySelector('button[type="submit"]');
-        const originalText = submitBtn ? submitBtn.innerText : '';
-        if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.innerText = 'Enviando...';
+        const nombre = document.getElementById("nombre").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const mensaje = document.getElementById("mensaje").value.trim();
+
+        const formattedMessage = [
+            "Hola S.I.E, solicito cotización de Manufactura Electrónica:",
+            `- Nombre / Empresa: ${nombre}`,
+            `- Correo Electrónico: ${email}`,
+            `- Detalle de la consulta: ${mensaje}`
+        ].join("\n");
+
+        const waUrl = `https://wa.me/5493516723910?text=${encodeURIComponent(formattedMessage)}`;
+        if (fallbackLink) {
+            fallbackLink.href = waUrl;
         }
 
-        const nombre = document.getElementById("nombre").value;
-        const email = document.getElementById("email").value;
-        const mensaje = document.getElementById("mensaje").value;
-
-        emailjs.send("service_s0cjykb", "template_merzek2", {
-            name: nombre,
-            email: email,
-            message: mensaje
-        })
-        .then(response => {
-            console.log("ÉXITO!", response.status, response.text);
-            formulario.style.display = "none";
-            mensajeExito.style.display = "block";
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.innerText = originalText;
-            }
-        })
-        .catch(error => {
-            console.error("ERROR...", error);
-            alert("Hubo un error al enviar el correo. Por favor comunicate directamente por WhatsApp al +54 9 351 672-3910.");
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.innerText = originalText;
-            }
-        });
+        window.open(waUrl, "_blank", "noopener,noreferrer");
+        formulario.style.display = "none";
+        mensajeExito.style.display = "block";
     });
 
     reenviarBtn.addEventListener("click", function () {
         mensajeExito.style.display = "none";
         formulario.style.display = "block";
-        formulario.reset();
+    });
+}
+
+function initHeroShowcase() {
+    const showcase = document.getElementById("hero-showcase");
+    if (!showcase) return;
+
+    const tabs = Array.from(showcase.querySelectorAll(".ci-showcase-tab"));
+    const thumbs = Array.from(showcase.querySelectorAll(".ci-showcase-thumb"));
+    const imgEl = document.getElementById("hero-showcase-img");
+    const codeEl = document.getElementById("hero-family-code");
+    const captionEl = document.getElementById("hero-showcase-caption");
+    const specEl = document.getElementById("hero-showcase-spec");
+    const ctaEl = document.getElementById("hero-showcase-cta");
+    const archJumpLinks = document.querySelectorAll("[data-hero-jump]");
+
+    if (!tabs.length || !imgEl) return;
+
+    function selectFamily(familyKey) {
+        const targetTab = tabs.find(t => t.getAttribute("data-family") === familyKey);
+        if (!targetTab) return;
+
+        tabs.forEach(t => {
+            const active = t === targetTab;
+            t.classList.toggle("is-active", active);
+            t.setAttribute("aria-selected", active ? "true" : "false");
+        });
+
+        thumbs.forEach(th => {
+            th.classList.toggle("is-active", th.getAttribute("data-family") === familyKey);
+        });
+
+        const imgSrc = targetTab.getAttribute("data-img");
+        const imgAlt = targetTab.getAttribute("data-alt");
+        const code = targetTab.getAttribute("data-code");
+        const caption = targetTab.getAttribute("data-caption");
+        const spec = targetTab.getAttribute("data-spec");
+        const line = targetTab.getAttribute("data-line");
+        const ctaText = targetTab.getAttribute("data-cta");
+
+        if (imgSrc) imgEl.src = imgSrc;
+        if (imgAlt) imgEl.alt = imgAlt;
+        if (codeEl && code) codeEl.textContent = code;
+        if (captionEl && caption) captionEl.textContent = caption;
+        if (specEl && spec) specEl.textContent = spec;
+        if (ctaEl) {
+            if (line) ctaEl.setAttribute("data-select-line", line);
+            if (ctaText) ctaEl.innerHTML = `${ctaText} <span aria-hidden="true">→</span>`;
+        }
+    }
+
+    tabs.forEach((tab, idx) => {
+        tab.addEventListener("click", () => {
+            selectFamily(tab.getAttribute("data-family"));
+        });
+
+        tab.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+                e.preventDefault();
+                const dir = e.key === "ArrowRight" ? 1 : -1;
+                const next = (idx + dir + tabs.length) % tabs.length;
+                tabs[next].focus();
+                selectFamily(tabs[next].getAttribute("data-family"));
+            }
+        });
+    });
+
+    thumbs.forEach(thumb => {
+        thumb.addEventListener("click", () => {
+            selectFamily(thumb.getAttribute("data-family"));
+        });
+    });
+
+    archJumpLinks.forEach(link => {
+        link.addEventListener("mouseenter", () => {
+            const fam = link.getAttribute("data-hero-jump");
+            if (fam) selectFamily(fam);
+        });
+    });
+}
+
+function initCatalogVariantSwitchers() {
+    const items = document.querySelectorAll(".ci-catalog-item");
+    if (!items.length) return;
+
+    items.forEach(item => {
+        const img = item.querySelector(".ci-catalog-img");
+        const tag = item.querySelector(".ci-port-tag");
+        const btns = item.querySelectorAll(".ci-variant-btn");
+        if (!img || !btns.length) return;
+
+        btns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                btns.forEach(b => {
+                    const active = b === btn;
+                    b.classList.toggle("is-active", active);
+                    b.setAttribute("aria-pressed", active ? "true" : "false");
+                });
+                const nextImg = btn.getAttribute("data-img");
+                const nextAlt = btn.getAttribute("data-alt");
+                const nextCaption = btn.getAttribute("data-caption");
+                if (nextImg) img.src = nextImg;
+                if (nextAlt) img.alt = nextAlt;
+                if (tag && nextCaption) tag.textContent = nextCaption;
+            });
+        });
+    });
+}
+
+function initWholesaleForm() {
+    const formulario = document.getElementById("formulario-mayorista");
+    const mensajeExito = document.getElementById("ci-mensaje-exito");
+    const reenviarBtn = document.getElementById("ci-reenviar-btn");
+    const errorBox = document.getElementById("ci-form-error");
+    const fallbackLink = document.getElementById("ci-wa-fallback-link");
+
+    if (!formulario || !mensajeExito || !reenviarBtn) return;
+
+    function clearFormError() {
+        if (!errorBox) return;
+        errorBox.textContent = "";
+        errorBox.hidden = true;
+    }
+
+    function collectFormData() {
+        const nombre = document.getElementById("ci-nombre").value.trim();
+        const empresa = document.getElementById("ci-empresa").value.trim();
+        const provincia = document.getElementById("ci-provincia").value;
+        const email = document.getElementById("ci-email").value.trim();
+        const telefono = document.getElementById("ci-telefono").value.trim();
+        const linea = document.getElementById("ci-linea").value;
+        const volumen = document.getElementById("ci-volumen").value;
+        const modalidadEl = document.getElementById("ci-modalidad");
+        const modalidad = modalidadEl ? modalidadEl.value : "";
+        const detalle = document.getElementById("ci-mensaje").value.trim();
+        const reqs = Array.from(formulario.querySelectorAll('input[name="req_planta"]:checked')).map(cb => cb.value);
+
+        return { nombre, empresa, provincia, email, telefono, linea, volumen, modalidad, detalle, reqs };
+    }
+
+    formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
+        clearFormError();
+
+        const d = collectFormData();
+        const lines = [
+            "Hola S.I.E, solicito cotización mayorista de Computación Industrial:",
+            `- Línea: ${d.linea}`,
+            `- Volumen estimado: ${d.volumen}`
+        ];
+        if (d.modalidad) lines.push(`- Modalidad: ${d.modalidad}`);
+        if (d.empresa) lines.push(`- Empresa / Distribuidora: ${d.empresa}`);
+        if (d.nombre) lines.push(`- Contacto: ${d.nombre}`);
+        if (d.provincia) lines.push(`- Provincia: ${d.provincia}`);
+        if (d.telefono) lines.push(`- Teléfono / WhatsApp: ${d.telefono}`);
+        if (d.email) lines.push(`- Correo: ${d.email}`);
+        if (d.reqs.length) lines.push(`- Requerimientos de planta: ${d.reqs.join(", ")}`);
+        if (d.detalle) lines.push(`- Detalle: ${d.detalle}`);
+
+        const waUrl = `https://wa.me/5493516723910?text=${encodeURIComponent(lines.join("\n"))}`;
+        if (fallbackLink) {
+            fallbackLink.href = waUrl;
+        }
+
+        window.open(waUrl, "_blank", "noopener,noreferrer");
+        formulario.hidden = true;
+        mensajeExito.hidden = false;
+    });
+
+    reenviarBtn.addEventListener("click", function () {
+        clearFormError();
+        mensajeExito.hidden = true;
+        formulario.hidden = false;
+    });
+}
+
+function initCatalogLineLinks() {
+    const lineSelect = document.getElementById("ci-linea");
+    if (!lineSelect) return;
+
+    document.addEventListener("click", (e) => {
+        const trigger = e.target.closest("[data-select-line]");
+        if (!trigger) return;
+        const targetLine = trigger.getAttribute("data-select-line");
+        if (targetLine) {
+            lineSelect.value = targetLine;
+        }
     });
 }
 
 function initScrollReveal() {
     // 1. Standalone section wrappers
     const generalTargets = document.querySelectorAll(
-        '.section-title-wrap, .contact-lead-layout, .about-simple-grid, .map-box, .clarification-box, .tech-specs-wrap, .faq-accordion-wrap'
+        '.section-title-wrap, .contact-lead-layout, .about-simple-grid, .map-box, .clarification-box, .tech-specs-wrap, .faq-accordion-wrap, .ci-reveal'
     );
     generalTargets.forEach(el => el.classList.add('scroll-reveal'));
 
@@ -171,6 +350,11 @@ function initScrollReveal() {
     });
 
     const allTargets = document.querySelectorAll('.scroll-reveal');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        allTargets.forEach(el => el.classList.add('is-visible'));
+        return;
+    }
+
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -218,9 +402,10 @@ function initShareButton() {
     shareBtns.forEach(btn => {
         btn.addEventListener('click', async (e) => {
             e.preventDefault();
+            const metaDescription = document.querySelector('meta[name="description"]');
             const shareData = {
-                title: 'S.I.E | Montaje y Manufactura Electrónica en Argentina',
-                text: 'Soluciones de ensamble de placas SMT/THT, sourcing de componentes y testing en Córdoba, Argentina.',
+                title: document.title || 'S.I.E | Servicios para la Industria Electrónica',
+                text: metaDescription ? metaDescription.getAttribute('content') : 'S.I.E — Córdoba, Argentina.',
                 url: window.location.origin + window.location.pathname
             };
 
@@ -243,9 +428,13 @@ function init() {
     initMobileMenu();
     initReadingProgressBar();
     initHeroCarousel();
+    initHeroShowcase();
+    initCatalogVariantSwitchers();
     initAnimatedStats();
     initScrollReveal();
     initContactForm();
+    initWholesaleForm();
+    initCatalogLineLinks();
     initShareButton();
 }
 

@@ -172,6 +172,7 @@
         <a href="guia-archivos-pcb.pdf" target="_blank" rel="noopener noreferrer">Guía PCB</a>
         <a href="#nosotros">Empresa</a>
         <a href="#ubicacion">Ubicación</a>
+        <a href="computacion-industrial/" class="nav-division-link">Computación Industrial</a>
         <a href="#contacto" class="btn-cotizar-nav">Cotizar Ahora</a>
       </nav>
 
@@ -495,6 +496,17 @@
     </div>
   </section>
 
+  <!-- DIVISIÓN COMPUTACIÓN INDUSTRIAL -->
+  <section class="division-strip" aria-label="División Computación Industrial">
+    <div class="container division-strip-inner">
+      <div class="division-strip-copy">
+        <span class="division-strip-tag">DIVISIÓN COMPUTACIÓN INDUSTRIAL</span>
+        <p>¿Buscás Mini PCs Industriales por mayor? Conocé nuestra división de Computación Industrial para distribuidores.</p>
+      </div>
+      <a href="computacion-industrial/" class="division-strip-link">Ir a Computación Industrial <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
   <!-- CONTACTO & COTIZACIONES -->
   <section id="contacto" class="section-block bg-surface">
     <div class="container">
@@ -523,13 +535,14 @@
               <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describí cantidad de placas estimadas, tipo de montaje (SMT/THT), si proveés componentes o requerís sourcing, plazos previstos..." required></textarea>
             </div>
 
-            <button type="submit" class="btn-submit-lead">Enviar Consulta para Cotización</button>
+            <button type="submit" class="btn-submit-lead">Enviar Consulta por WhatsApp</button>
           </form>
 
           <div id="mensaje-exito" class="mensaje-exito" style="display: none;">
-            <h3>Mensaje Recibido con Éxito</h3>
-            <p>Muchas gracias por contactarnos. Nuestro equipo técnico evaluará tu solicitud y se comunicará a la brevedad.</p>
-            <button id="reenviar-btn" class="btn-secondary-clean">Enviar otra consulta</button>
+            <h3>Consulta Lista en WhatsApp</h3>
+            <p>Abrimos WhatsApp con tu consulta prellenada. Si no se abrió automáticamente, tocá el botón de abajo para iniciar el chat.</p>
+            <a id="wa-fallback-link" href="https://wa.me/5493516723910" target="_blank" rel="noopener noreferrer" class="btn-wa-big" style="margin-bottom: 1rem;">Abrir WhatsApp con mi consulta</a>
+            <button id="reenviar-btn" class="btn-secondary-clean">Editar o enviar otra consulta</button>
           </div>
         </div>
 
@@ -658,6 +671,7 @@
           <li><a href="#clientes">Clientes</a></li>
           <li><a href="#faq">Preguntas Frecuentes</a></li>
           <li><a href="guia-archivos-pcb.pdf" target="_blank" rel="noopener noreferrer">Guía de Archivos PCB (PDF)</a></li>
+          <li><a href="computacion-industrial/">Computación Industrial</a></li>
           <li><a href="#contacto">Cotizaciones</a></li>
           <li><a href="#ubicacion">Ubicación</a></li>
         </ul>
@@ -688,12 +702,6 @@
   </a>
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    emailjs.init({
-      publicKey: "Kp6w_ic4Zqr_Mn_5D",
-    });
-  </script>
   <script src="js/scripts.js"></script>
 </body>
 </html>

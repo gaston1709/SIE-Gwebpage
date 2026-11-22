@@ -4,9 +4,17 @@
   <!-- Página Principal / Landing Canónica -->
   <url>
     <loc>https://www.sie.com.ar/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- División Computación Industrial Mayorista -->
+  <url>
+    <loc>https://www.sie.com.ar/computacion-industrial/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- Documentación Técnica / Guía de Archivos PCB -->
